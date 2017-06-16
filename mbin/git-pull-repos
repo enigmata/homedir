@@ -1,0 +1,27 @@
+#!/bin/bash
+
+USAGE="\n
+Usage: git_pull_repos [--help]\n
+\n
+For each repo in the sub-directories of the current working\n
+directory from which this script is executed, call \"git pull\".\n
+\n
+"
+
+if [[ "$1" == "--help" ]]
+then
+    echo -e $USAGE
+    exit 1
+fi
+
+for dir in `find . -type d -depth 1`
+do
+    pushd $dir > /dev/null
+    echo -e ">>>>>>>>>>>>>>>>>>>>>>"
+    echo -e "`basename $dir`: git pull\n"
+    git pull
+    echo -e "<<<<<<<<<<<<<<<<<<<<<<\n"
+    popd > /dev/null
+done
+
+exit 0
