@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# TODO: accommodate diff platforms (MacOS only now)
+# TODO: automatically set default based on available resources (cores, mem)
+#       and available vm driver
+# TODO: provide optional cmd-line args to set cores, mem explicitly
+minikube start --vm-driver=xhyve --cpus=4 --memory=8192
+
