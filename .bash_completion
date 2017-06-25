@@ -1,0 +1,20 @@
+# completions for all *unix* platforms
+files=$(shopt -s nullglob dotglob; echo .bash_completion.d/*)
+if (( ${#files} ))
+then
+    for bcfile in ~/.bash_completion.d/* ; do
+        . $bcfile
+    done
+fi
+
+# platform-specific completions
+if [[ "$OSTYPE" =~ darwin ]]
+then
+    files=$(shopt -s nullglob dotglob; echo /usr/local/etc/bash_completion.d/*)
+    if (( ${#files} ))
+    then
+        for bcfile in /usr/local/etc/bash_completion.d/* ; do
+            . $bcfile
+        done
+    fi
+fi  # OS X
