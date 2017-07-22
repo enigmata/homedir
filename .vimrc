@@ -49,6 +49,19 @@ let g:go_highlight_types = 1
 " let g:go_fmt_autosave = 0
 
 """""""""""""""""""""""""""""""""""""""""
+" CPP code editing
+"""""""""""""""""""""""""""""""""""""""""
+if has("autocmd")
+    autocmd FileType cpp setlocal ts=2 sts=2 sw=2 expandtab
+
+    function! FormatCppOnSave()
+        let l:formatdiff = 1
+        pyf ~/mbin/clang-format.py
+    endfunction
+    autocmd BufWritePre *.h,*.hpp,*.cpp call FormatCppOnSave()
+endif
+
+"""""""""""""""""""""""""""""""""""""""""
 " Themes: GUI vs Terminal Settings
 """""""""""""""""""""""""""""""""""""""""
 if has("gui_running")
