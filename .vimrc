@@ -1,4 +1,3 @@
-
 """""""""""""""""""""""""""""""""""""""""
 " Plugin management via Pathogen
 """""""""""""""""""""""""""""""""""""""""
@@ -37,7 +36,12 @@ nnoremap <leader>a :Ag
 map <C-n> :cnext<CR>
 map <C-m> :cprevious<CR>
 nnoremap <leader>c :cclose<CR>
-"
+
+"""""""""""""""""""""""""""""""""""""""""
+" UltiSnips
+"""""""""""""""""""""""""""""""""""""""""
+let g:UltiSnipsSnippetDirectories=$HOME.'/.vim/UltiSnips'
+
 """""""""""""""""""""""""""""""""""""""""
 " Vim-Go
 """""""""""""""""""""""""""""""""""""""""
