@@ -37,17 +37,6 @@ map <C-m> :cprevious<CR>
 nnoremap <leader>c :cclose<CR>
 
 """""""""""""""""""""""""""""""""""""""""
-" YouCompleteMe
-"""""""""""""""""""""""""""""""""""""""""
-let g:ycm_key_list_previous_completion=['<Up>']
-
-"""""""""""""""""""""""""""""""""""""""""
-" UltiSnips
-"""""""""""""""""""""""""""""""""""""""""
-let g:UltiSnipsExpandTrigger="<c-tab>"
-let g:UltiSnipsListSnippets="<c-s-tab>"
-
-"""""""""""""""""""""""""""""""""""""""""
 " Vim-Go
 """""""""""""""""""""""""""""""""""""""""
 autocmd FileType go nmap <leader>b  <Plug>(go-build)
