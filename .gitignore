@@ -72,6 +72,7 @@ src/
 .node_repl_history
 .npm/
 .oracle_jre_usage/
+.pencil/
 .pip/
 .pki/
 .pulse/
