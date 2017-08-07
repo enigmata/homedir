@@ -49,6 +49,6 @@
 [submodule ".vim/bundle/ultisnips"]
 	path = .vim/bundle/ultisnips
 	url = git://github.com/SirVer/ultisnips.git
-[submodule ".vim/bundle/youcompleteme"]
-	path = .vim/bundle/youcompleteme
-	url = https://github.com/Valloric/YouCompleteMe.git
+[submodule ".vim/bundle/cmake-syntax"]
+	path = .vim/bundle/cmake-syntax
+	url = https://github.com/pboettch/vim-cmake-syntax.git
