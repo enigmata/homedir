@@ -79,9 +79,9 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 
-# if [ -f ~/.bash_login ]; then
-#     . ~/.bash_login
-# fi
+if [ -f ~/.bash_login ]; then
+    . ~/.bash_login
+fi
 
 ## enable programmable completion features (you don't need to enable
 ## this, if it's already enabled in /etc/bash.bashrc and /etc/profile
