@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# Install GCC as built from source, which requires
+# first removing previously installed version of GCC
+
+GCC_CUR_VER=7.1.0
+GCC_NEW_VER=7.2.0
+GCC_CUR_VER_TMP_INSTALL_DIR=/tmp/gcc-${GCC_CUR_VER}
+GCC_ROOT_SOURCE_DIR=~/src
+GCC_CUR_VER_SRC_DIR=${GCC_ROOT_SOURCE_DIR}/gcc-${GCC_CUR_VER}
+GCC_CUR_VER_BUILD_DIR=${GCC_CUR_VER_SRC_DIR}-build
+GCC_NEW_VER_SRC_DIR=${GCC_ROOT_SOURCE_DIR}/gcc-${GCC_NEW_VER}
+GCC_NEW_VER_BUILD_DIR=${GCC_NEW_VER_SRC_DIR}-build
+
+# TODO: take as input args the current and new versions of gcc
+
+# TODO: verify all required directories/files exist before proceeding
+
+# echo Building new version of GCC: $GCC_NEW_VER
+# cd $GCC_NEW_VER_BUILD_DIR
+# ${GCC_NEW_VER_SRC_DIR}/configure --enable-languages=c++ --disable-multilib
+# make -j 3
+
+if [[ -d $GCC_CUR_VER_TMP_INSTALL_DIR ]];
+then
+    rm -rf $GCC_CUR_VER_TMP_INSTALL_DIR
+fi
+
+echo Installing current version in temp directory
+cd $GCC_CUR_VER_BUILD_DIR
+make install DESTDIR=$GCC_CUR_VER_TMP_INSTALL_DIR
+
+echo Remove installed files of the current version (${GCC_CUR_VER}) of gcc
+find $GCC_CUR_VER_TMP_INSTALL_DIR -type f -printf '/%P\n' | (while read F; do sudo rm "$F"; done)
+
+#echo Remove empty directories of previous version of gcc
+#sudo find $GCC_TMP_INSTALL_DIR -depth -type d -printf '/%P\n' -not -empty | (while read F; do rmdir -p --ignore-fail-on-non-empty "$F"; done)
+
+#echo Installing new version of GCC: ${GCC_NEW_VER}
+#sudo make install
