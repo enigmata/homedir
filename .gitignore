@@ -73,10 +73,12 @@ src/
 .npm/
 .oracle_jre_usage/
 .pencil/
+.perl6/
 .pip/
 .pki/
 .pulse/
 .pulse-cookie
+.python_history
 .qalculate/
 .rediscli_history
 .rnd
