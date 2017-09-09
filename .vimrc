@@ -6,7 +6,7 @@ execute pathogen#infect()
 """""""""""""""""""""""""""""""""""""""""
 " Basic settings
 """""""""""""""""""""""""""""""""""""""""
-set clipboard=unnamed
+"set clipboard=unnamed
 set dictionary=/usr/share/dict/words
 let mapleader = ","
 
