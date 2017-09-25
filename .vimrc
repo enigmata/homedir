@@ -182,6 +182,7 @@ set cpoptions=$
 " Line numbering, Status line, auto indent
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 set number
+set relativenumber
 set ruler
 set autoindent
 
