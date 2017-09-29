@@ -8,7 +8,7 @@ execute pathogen#infect()
 """""""""""""""""""""""""""""""""""""""""
 "set clipboard=unnamed
 set dictionary=/usr/share/dict/words
-let mapleader = ","
+let mapleader = ";"
 
 """""""""""""""""""""""""""""""""""""""""
 " Plugins
