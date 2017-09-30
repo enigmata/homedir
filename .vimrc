@@ -260,12 +260,6 @@ nmap <leader>l :setlocal number!<CR>
 set wildmenu      " visual autocomplete for cmdline
 
 """""""""""""""""""""""""""""""""""""""""""""""""
-" undo
-"""""""""""""""""""""""""""""""""""""""""""""""""
-
-nnoremap <leader>u :GundoToggle<CR>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""
 " file browser / navigation
 """""""""""""""""""""""""""""""""""""""""""""""""
 
