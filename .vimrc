@@ -255,12 +255,6 @@ nmap <leader>l :setlocal number!<CR>
 " nmap <leader>o :set paste!<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""
-" CTRL-P for fuzzy search of files, buffers, etc
-"""""""""""""""""""""""""""""""""""""""""""""""""
-
-set runtimepath^=~/.vim/bundle/ctrlp.git
-
-"""""""""""""""""""""""""""""""""""""""""""""""""
 " autocomplete
 """""""""""""""""""""""""""""""""""""""""""""""""
 set wildmenu      " visual autocomplete for cmdline
