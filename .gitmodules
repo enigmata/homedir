@@ -22,9 +22,6 @@
 [submodule ".vim/bundle/vim-go"]
 	path = .vim/bundle/vim-go
 	url = https://github.com/fatih/vim-go.git
-[submodule ".vim/bundle/unimpaired"]
-	path = .vim/bundle/unimpaired
-	url = https://github.com/tpope/vim-unimpaired
 [submodule ".vim/bundle/cmake-syntax"]
 	path = .vim/bundle/cmake-syntax
 	url = https://github.com/pboettch/vim-cmake-syntax.git
