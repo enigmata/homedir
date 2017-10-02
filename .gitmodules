@@ -19,9 +19,9 @@
 [submodule ".vim/bundle/vim-go"]
 	path = .vim/bundle/vim-go
 	url = https://github.com/fatih/vim-go.git
-[submodule ".vim/bundle/cmake-syntax"]
-	path = .vim/bundle/cmake-syntax
-	url = https://github.com/pboettch/vim-cmake-syntax.git
 [submodule ".vim/pack/nginx"]
 	path = .vim/pack/nginx
 	url = git@github.com:rwhorman/vim-nginx.git
+[submodule ".vim/pack/cmake-syntax/start/cmake-syntax"]
+	path = .vim/pack/cmake-syntax/start/cmake-syntax
+	url = https://github.com/pboettch/vim-cmake-syntax.git
