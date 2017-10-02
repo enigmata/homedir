@@ -13,8 +13,8 @@
 [submodule ".vim/pack/nginx"]
 	path = .vim/pack/nginx
 	url = git@github.com:rwhorman/vim-nginx.git
-[submodule ".vim/pack/cmake-syntax/start/cmake-syntax"]
-	path = .vim/pack/cmake-syntax/start/cmake-syntax
+[submodule ".vim/pack/cmake/start/cmake-syntax"]
+	path = .vim/pack/cmake/start/cmake-syntax
 	url = https://github.com/pboettch/vim-cmake-syntax.git
 [submodule ".vim/pack/nerdtree/start/nerdtree"]
 	path = .vim/pack/nerdtree/start/nerdtree
