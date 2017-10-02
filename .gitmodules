@@ -22,3 +22,6 @@
 [submodule ".vim/bundle/cmake-syntax"]
 	path = .vim/bundle/cmake-syntax
 	url = https://github.com/pboettch/vim-cmake-syntax.git
+[submodule ".vim/pack/nginx"]
+	path = .vim/pack/nginx
+	url = git@github.com:rwhorman/vim-nginx.git
