@@ -10,9 +10,6 @@
 [submodule ".tmux/plugins/tmux-yank"]
 	path = .tmux/plugins/tmux-yank
 	url = https://github.com/tmux-plugins/tmux-yank
-[submodule ".vim/bundle/vim-colors-solarized"]
-	path = .vim/bundle/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule ".vim/bundle/vim-go"]
 	path = .vim/bundle/vim-go
 	url = https://github.com/fatih/vim-go.git
@@ -25,3 +22,6 @@
 [submodule ".vim/pack/nerdtree/start/nerdtree"]
 	path = .vim/pack/nerdtree/start/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
+[submodule ".vim/pack/vim-colors-solarized/start/vim-colors-solarized"]
+	path = .vim/pack/vim-colors-solarized/start/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized.git
