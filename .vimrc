@@ -80,8 +80,8 @@ else
     "set background=light   " adapt colors for dark background
     set background=dark   " adapt colors for dark background
     colorscheme molokai 
-    let g:rehash256 = 1   " molokai, under dev: original 256 color version
-    let g:molokai_original = 1 " molokai, original background color
+    "let g:rehash256 = 1   " molokai, under dev: original 256 color version
+    "let g:molokai_original = 1 " molokai, original background color
     "colorscheme solarized 
     "colorscheme slate
     "colorscheme lucius
