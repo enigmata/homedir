@@ -23,7 +23,6 @@ if &diff | syntax off | endif " Turn syntax highlighting off for diff
 :set smartcase
 :set hlsearch
 :nmap <leader>n :nohl<CR>
-nnoremap <leader>a :Ag
 
 """""""""""""""""""""""""""""""""""""""""
 " Compiling helpers
