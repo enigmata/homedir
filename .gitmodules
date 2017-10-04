@@ -19,9 +19,6 @@
 [submodule ".vim/pack/nerdtree/start/nerdtree"]
 	path = .vim/pack/nerdtree/start/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule ".vim/pack/colors/opt/vim-colors-solarized"]
-	path = .vim/pack/colors/opt/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule ".vim/pack/go/start/vim-go"]
 	path = .vim/pack/go/start/vim-go
 	url = https://github.com/fatih/vim-go.git
