@@ -22,3 +22,6 @@
 [submodule ".vim/pack/go/start/vim-go"]
 	path = .vim/pack/go/start/vim-go
 	url = https://github.com/fatih/vim-go.git
+[submodule ".vim/pack/colors/opt/solarize"]
+	path = .vim/pack/colors/opt/solarize
+	url = https://github.com/rwhorman/vim-colors-solarized.git
