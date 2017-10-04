@@ -55,13 +55,6 @@ if has("autocmd")
 endif
 
 """""""""""""""""""""""""""""""""""""""""
-" Themes: GUI vs Terminal Settings
-"""""""""""""""""""""""""""""""""""""""""
-
-set background=dark
-colorscheme solarized 
-
-"""""""""""""""""""""""""""""""""""""""""
 " Tab stops
 """""""""""""""""""""""""""""""""""""""""
 set ts=4 sts=4 sw=4 expandtab " prefer spaces instead of tab characters
@@ -165,6 +158,9 @@ set spelllang=en_ca
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Color Schemes and Syntax Highlighting
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+set background=dark
+colorscheme solarized 
 
 " Show syntax highlighting groups for word under cursor
 nmap <C-S-P> :call <SID>SynStack()<CR>
