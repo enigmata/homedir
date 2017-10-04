@@ -57,37 +57,9 @@ endif
 """""""""""""""""""""""""""""""""""""""""
 " Themes: GUI vs Terminal Settings
 """""""""""""""""""""""""""""""""""""""""
-if has("gui_running")
-"    set guifont=Liberation\ Mono\ 8" use this font
-"    set lines=75          " height = 50 lines
-"    set columns=180       " width = 100 columns
-     set background=dark   " adapt colors for background
-     "set background=light  " adapt colors for background
-"    set background=light  " adapt colors for background
-"    set keymodel=
-"    set mousehide
-"    colorscheme underwater-mod
-"    color slate " My color scheme, adopted from TextMate
-"    colorscheme slate " My color scheme, adopted from TextMate
-     colorscheme solarized 
-"    colorscheme void
-"
-"    " To set the toolbars off (icons on top of the screen)
-"    set guioptions-=T
-else
-    let g:solarized_termtrans=1
-    "set background=light   " adapt colors for dark background
-    set background=dark   " adapt colors for dark background
-    colorscheme molokai 
-    "let g:rehash256 = 1   " molokai, under dev: original 256 color version
-    "let g:molokai_original = 1 " molokai, original background color
-    "colorscheme solarized 
-    "colorscheme slate
-    "colorscheme lucius
-    set t_Co=256
-    "set t_Co=16 " Enable 16 colors in Terminal
-endif
 
+set background=dark
+colorscheme solarized 
 
 """""""""""""""""""""""""""""""""""""""""
 " Tab stops
