@@ -25,7 +25,9 @@ export GOBIN=~/bin
 
 # unicode symbols in the prompt
 # UNC_SYM_RIGHT_ARROW="\UE0B0"
+# UNC_SYM_RIGHT_ARROW=""
 # UNC_SYM_LEFT_ARROW="\UE0B2"
+# UNC_SYM_LEFT_ARROW=""
 
 # ANSI colour escape sequences for prompt
 # COLOUR_OFF="\[\033[0m\]"
@@ -50,8 +52,7 @@ export GOBIN=~/bin
 # BGFG_COLOUR_GREEN_ON_BLUE="\[\033[44;32m\]"
 # BGFG_COLOUR_BLUE_ON_BLACK="\[\033[40;34m\]"
 
-export PS1=$'\[\033[42;30m\]\u@\h \[\033[44;32m\]\uE0B0\[\033[44;30m\] \w \[\033[40;34m\]\UE0B0\[\033[0m\]\n$ '
-
+export PS1=$'\[\033[42;30m\]\u@\h \[\033[44;32m\]\[\033[44;30m\] \w \[\033[40;34m\]\[\033[0m\]\n$ '
 
 . ~/.bash_completion
 
