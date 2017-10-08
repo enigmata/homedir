@@ -144,6 +144,7 @@ set number
 set relativenumber
 set ruler
 set autoindent
+set laststatus=2
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Spell Checking
