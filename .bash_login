@@ -16,7 +16,7 @@ fi
 
 alias lsof-listen='lsof -iTCP -sTCP:LISTEN'
 
-export PATH=~/mbin:~/bin:$PATH
+export PATH=~/mbin:~/bin:$PATH:/usr/local/sbin
 
 export GIT_EDITOR=vim
 
