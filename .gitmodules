@@ -28,3 +28,6 @@
 [submodule ".vim/pack/statusline"]
 	path = .vim/pack/statusline
 	url = https://github.com/rwhorman/vim-statusline.git
+[submodule ".vim/pack/ctags"]
+	path = .vim/pack/ctags
+	url = https://github.com/rwhorman/vim-ctags

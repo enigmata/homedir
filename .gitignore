@@ -51,6 +51,7 @@ src/
 .gnome/
 .gnome2/
 .gnome2_private/
+.gnupg/
 .gstreamer-0.10/
 .gtk-bookmarks
 .gvfs/
