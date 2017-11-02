@@ -32,7 +32,9 @@ src/
 .cf/
 .CFUserTextEncoding
 .compiz/
-.config/
+.config/configstore
+.config/git
+.config/htop
 .cisco/
 .cups/
 .dbshell
