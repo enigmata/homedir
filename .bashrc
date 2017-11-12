@@ -105,3 +105,8 @@ then
     #export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
     bind -x '"\C-p": vim $(fzf);'
 fi
+
+if [ -d ~/.local/bin ]
+then
+    export PATH=~/.local/bin:$PATH
+fi
