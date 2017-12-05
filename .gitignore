@@ -45,6 +45,7 @@ src/
 .config/htop
 .config/ibus/
 .config/libaccounts-glib/
+.config/lxc/
 .config/menus/
 .config/mimeapps.list
 .config/monitors-v1-backup.xml
@@ -81,11 +82,13 @@ src/
 .gtk-bookmarks
 .gvfs/
 .homebrew*
+.httpie
 .ICEauthority
 .ipynb*
 .ipython/
 .jupyter/
 .kube/
+.launchpadlib/
 .lesshst
 .local/
 .macromedia/
@@ -100,6 +103,7 @@ src/
 .node-gyp/
 .node_repl_history
 .npm/
+.nv/
 .oracle_jre_usage/
 .pencil/
 .perl6/
