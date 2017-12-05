@@ -18,3 +18,15 @@ then
         done
     fi
 fi  # OS X
+
+
+# app specific
+comp_scripts=(/usr/local/Bluemix/bx/bash_autocomplete)
+
+for comp_script in $comp_scripts
+do
+    if [ -r $comp_script ]
+    then
+        source $comp_script
+    fi
+done
