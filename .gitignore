@@ -88,6 +88,7 @@ src/
 .ipython/
 .jupyter/
 .kube/
+.kubefyre/
 .launchpadlib/
 .lesshst
 .local/
