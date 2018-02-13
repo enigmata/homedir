@@ -6,7 +6,6 @@ set ruler
 set autoindent
 set relativenumber
 set nowrap        " plays nicer with relativenumber
-set paste         " handle pasting text from other windows
 set wildmenu      " visual autocomplete for cmdline
 set laststatus=2  " always display status line
 set cpoptions=$   " put a '$' at end of changed text
