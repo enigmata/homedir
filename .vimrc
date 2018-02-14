@@ -65,8 +65,13 @@ if has("autocmd")
     autocmd FileType cpp setlocal ts=2 sts=2 sw=2 expandtab
 
     function! FormatCppOnSave()
-        let l:formatdiff = 1
-        pyf ~/mbin/clang-format.py
+        "let l:formatdiff = 1
+        let l:lines = "all"
+        if has("python3")
+            py3file ~/mbin/clang-format.py
+        else
+            pyf ~/mbin/clang-format.py
+        endif
     endfunction
     autocmd BufWritePre *.h,*.hpp,*.cpp call FormatCppOnSave()
 endif
