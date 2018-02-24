@@ -117,6 +117,7 @@ src/
 .qalculate/
 .rediscli_history
 .rnd
+.selected_editor
 .spark*yaml
 .subversion/
 .sudo_as_admin_successful
