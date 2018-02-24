@@ -1,0 +1,29 @@
+#!/bin/bash
+
+. ~/.private
+
+MY_DOMAIN=enigmata.io
+
+MY_EXTERNAL_IP=`dig +short myip.opendns.com @resolver1.opendns.com`
+if [[ $? -ne 0 ]]
+then
+    echo ERROR: Could not determine external IP. Error code=$?
+    exit -1
+fi
+
+DNS_DOMAIN_IP=`nslookup ${MY_DOMAIN} | grep Address | grep -v "#" | cut -f2 -d" "`
+if [[ $? -ne 0 ]]
+then
+    echo ERROR: Could not get IP for ${MY_DOMAIN}. Error code=$?
+    exit -1
+fi
+
+if [[ $MY_EXTERNAL_IP != $DNS_DOMAIN_IP ]]
+then
+    echo UPDATE: Changing DNS IP from $DNS_DOMAIN_IP to $MY_EXTERNAL_IP
+    echo curl "https://dynamicdns.park-your-domain.com/update?host=@&domain=${MY_DOMAIN}&password=${DYNDNS_TOKEN}&ip=${MY_EXTERNAL_IP}"
+else
+    echo INFO: External IP and $MY_DOMAIN IP are the same: $MY_EXTERNAL_IP = $DNS_DOMAIN_IP
+fi
+
+exit 0
