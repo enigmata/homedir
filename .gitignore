@@ -118,6 +118,7 @@ src/
 .rediscli_history
 .rnd
 .spark*yaml
+.subversion/
 .sudo_as_admin_successful
 .swt/
 .thumbnails/
