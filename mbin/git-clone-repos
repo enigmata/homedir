@@ -30,6 +30,8 @@ git-clone-repos --org thunder --ghe github.acme.com
 
 "
 
+source ~/.private
+
 if [[ "$1" == "--help" ]]
 then
     echo "$USAGE"
