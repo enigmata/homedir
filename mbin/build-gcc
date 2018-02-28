@@ -34,8 +34,8 @@ then
     mkdir -p $GCC_BLD_DIR
 else
     rm -rf $GCC_BLD_DIR/*
-
 fi
+
 cd $GCC_BLD_DIR 
 
 GCC_INSTALL_DIR=${GCC_INSTALL_BASE_DIR}/vers/${GCC_VER}
@@ -65,6 +65,11 @@ fi
 #############################################
 # Step 3:  Install gcc
 #############################################
+
+if [[ ! -d $GCC_INSTALL_DIR ]]
+then
+    mkdir -p $GCC_INSTALL_DIR
+fi
 
 echo installing gcc into $GCC_INSTALL_DIR
 
