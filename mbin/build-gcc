@@ -5,10 +5,16 @@
 #############################################
 
 GCC_GIT_REPO=git://gcc.gnu.org/git/gcc.git
+GCC_GIT_BRANCH=master
 GCC_BASE_DIR=${HOME}/src/gcc.gnu.org
 GCC_SRC_DIR=${GCC_BASE_DIR}/gcc
 GCC_BLD_DIR=${GCC_BASE_DIR}/gcc-bld
 GCC_INSTALL_BASE_DIR=${HOME}/cbin/compilers/gcc
+
+if [[ $# > 0 ]]
+then
+    GCC_GIT_BRANCH=$1
+fi
 
 if [[ ! -d $GCC_SRC_DIR ]]
 then
@@ -17,8 +23,17 @@ then
     git clone $GCC_GIT_REPO
 fi
 
+echo Checking out the $GCC_GIT_BRANCH branch ...
+
 cd $GCC_SRC_DIR
-git checkout master
+git checkout $GCC_GIT_BRANCH
+
+if [[ $? -ne 0 ]]
+then
+    echo ERROR: ${1} is not a valid gcc branch
+    exit -1
+fi
+
 git pull
 
 GCC_VER=`cat gcc/BASE-VER`
