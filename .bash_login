@@ -18,7 +18,7 @@ fi
 alias lsof-listen='lsof -iTCP -sTCP:LISTEN'
 alias kfyre='kubectl --kubeconfig ~/.kubefyre/admin.conf'
 
-export PATH=~/mbin:~/bin:$PATH:/usr/local/sbin
+export PATH=~/mbin:~/bin:~/cbin:$PATH:/usr/local/sbin
 
 export GIT_EDITOR=vim
 
