@@ -54,6 +54,7 @@ src/
 .config/monitors.xml~
 .config/nautilus/
 .config/pulse/
+.config/rtv/
 .config/software-center/
 .config/ubuntu-amazon-default/
 .config/ubuntu-ui-toolkit/
