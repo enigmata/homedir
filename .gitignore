@@ -18,6 +18,7 @@ cbin/
 .m2/
 .*swp
 tmp/
+*.log
 
 # source code working directories
 projects/
@@ -49,6 +50,7 @@ src/
 .config/htop
 .config/ibus/
 .config/libaccounts-glib/
+.config/libreoffice/
 .config/lxc/
 .config/menus/
 .config/mimeapps.list
@@ -59,9 +61,12 @@ src/
 .config/pulse/
 .config/rtv/
 .config/software-center/
+.config/totem/
 .config/ubuntu-amazon-default/
 .config/ubuntu-ui-toolkit/
 .config/unity/
+.config/unity-monitors-v1-backup.xml
+.config/unity-monitors.xml
 .config/update-notifier/
 .config/user-dirs.dirs
 .config/user-dirs.locale
@@ -77,6 +82,7 @@ src/
 .fontconfig/
 .gconf/
 .gem
+.ghc/
 .git/
 .glide/
 .gnome/
@@ -110,6 +116,7 @@ src/
 .node_repl_history
 .npm/
 .nv/
+.nvidia-settings-rc
 .oracle_jre_usage/
 .pencil/
 .perl6/
@@ -139,6 +146,7 @@ src/
 .xsession-errors
 .xsession-errors.old
 .Xauthority
+Dropbox
 curr-pkgs.txt
 demo/
 examples.desktop
@@ -147,10 +155,11 @@ isy/
 lib/
 miniconda3/
 pkg/
+snap/
 stkeystore.p12
 tensorflow/
 
-# macOS home sub-dirs are not portable (for me)
+# home sub-dirs that are not portable
 .DS_Store
 .Trash/
 Applications/
