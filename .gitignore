@@ -38,9 +38,12 @@ src/
 .config/compiz-1/
 .config/configstore
 .config/dconf/
+.config/eog/
 .config/evolution/
 .config/git
 .config/gnome-control-center/
+.config/gnome-initial-setup-done
+.config/goa-1.0/
 .config/google-chrome/
 .config/gtk-3.0/
 .config/htop
@@ -124,6 +127,7 @@ src/
 .sudo_as_admin_successful
 .swt/
 .thumbnails/
+.thunderbird/
 .tmux/resurrect/
 .travis/
 .v8flags*
