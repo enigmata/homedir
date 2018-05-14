@@ -17,6 +17,10 @@ else
     export MANPATH=/usr/local/texlive/2018/texmf-dist/doc/man:${MANPATH}
     export INFOPATH=/usr/local/texlive/2018/texmf-dist/doc/info:${INFOPATH}
 
+    export PATH=/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH
+    export MANPATH=/home/linuxbrew/.linuxbrew/share/man:${MANPATH}
+    export INFOPATH=/home/linuxbrew/.linuxbrew/share/info:${INFOPATH}
+
     alias ll='ls -alF'
     alias dir='ls -alF'
 fi
