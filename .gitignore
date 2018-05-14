@@ -35,6 +35,7 @@ src/
 .CFUserTextEncoding
 .compiz/
 .config/QtProject.conf
+.config/asciinema/
 .config/autostart/
 .config/compiz-1/
 .config/configstore
