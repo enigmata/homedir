@@ -33,6 +33,7 @@ src/
 .bundle/
 .cf/
 .CFUserTextEncoding
+.cisco/
 .compiz/
 .config/QtProject.conf
 .config/asciinema/
@@ -72,7 +73,7 @@ src/
 .config/user-dirs.dirs
 .config/user-dirs.locale
 .config/yelp/
-.cisco/
+.cpan/
 .cups/
 .dbshell
 .dbus/
