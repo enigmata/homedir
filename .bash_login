@@ -4,7 +4,7 @@
 
 . ~/.private
 
-export PATH=~/mbin:~/bin:~/cbin:$PATH:/usr/local/sbin
+export PATH=$HOME/mbin:$HOME/bin:$HOME/.cargo/bin:$PATH:/usr/local/sbin
 
 if [[ "$OSTYPE" =~ darwin ]]
 then  # OS X

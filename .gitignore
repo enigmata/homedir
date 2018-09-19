@@ -24,6 +24,11 @@ tmp/
 projects/
 src/
 
+# rust directories
+.cargo/
+.multirust
+.rustup/
+
 # app or utility specific that I don't want common across platforms
 .489454.padl
 .anyconnect
