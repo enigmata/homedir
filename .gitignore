@@ -148,6 +148,7 @@ src/
 .v8flags*
 .viminfo
 .vim/.netrwhist
+.w3m/
 .wget-hsts
 .vscode/
 .xinputrc
