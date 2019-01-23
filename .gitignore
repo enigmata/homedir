@@ -67,6 +67,7 @@ src/
 .config/nautilus/
 .config/neofetch/
 .config/pulse/
+.config/rclone/
 .config/rtv/
 .config/software-center/
 .config/totem/
