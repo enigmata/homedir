@@ -1,0 +1,28 @@
+#!/bin/bash
+
+USAGE="\n
+Usage: git_submodule_update [--help]\n
+\n
+For each submodule in the repo, update its local clone.\n
+\n
+"
+
+if [[ "$1" == "--help" ]]
+then
+    echo -e $USAGE
+    exit 1
+fi
+
+for dir in `git status | grep "modified:" | awk ' {print $2}'`
+do
+    pushd $dir > /dev/null
+    echo -e ">>>>>>>>>>>>>>>>>>>>>>"
+    echo -e "`basename $dir`: git status\n"
+    git status
+    git checkout master
+    git pull
+    echo -e "<<<<<<<<<<<<<<<<<<<<<<\n"
+    popd > /dev/null
+done
+
+exit 0
