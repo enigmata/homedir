@@ -69,6 +69,7 @@ src/
 .config/pulse/
 .config/rclone/
 .config/rtv/
+.config/Rygel/
 .config/software-center/
 .config/totem/
 .config/ubuntu-amazon-default/
