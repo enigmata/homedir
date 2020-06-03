@@ -31,3 +31,6 @@
 [submodule ".vim/pack/ctags"]
 	path = .vim/pack/ctags
 	url = https://github.com/rwhorman/vim-ctags
+[submodule "/Users/randy/.vim/pack/rust/start/rust.vim"]
+	path = .vim/pack/rust/start/rust.vim
+	url = https://github.com/rust-lang/rust.vim
