@@ -1,10 +1,31 @@
 #!/bin/bash
 
+USAGE="
+Usage: tmux-dev  [--help]
+
+Create a tmux session called 'development', designed for programming.
+
+If the 'development' session already exists and this script is not
+running in a tmux session, then it will attach to the 'development'
+session.
+
+If the 'development' session does not exist, then the session is
+created and attached to only if this script is not already running
+in a session
+
+"
+
+if [[ "$1" == "--help" ]]
+then
+    echo "$USAGE"
+    exit 1
+fi
+
 SOURCE_CODE_BASE_DIR="~/src/github.com/enigmata"
 
 tmux has-session -t development
 
-if [ $? != 0 ]
+if [[ $? != 0 ]]
 then
     tmux new-session -s development -n compile_edit -d
     tmux send-keys -t development "cd $SOURCE_CODE_BASE_DIR" C-m
@@ -21,7 +42,7 @@ else
     echo \"development\" session already exists
 fi
 
-if [ -z "$TMUX" ]
+if [[ -z "$TMUX" ]]
 then
     tmux attach -t development
 else
