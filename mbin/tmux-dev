@@ -1,13 +1,15 @@
 #!/bin/bash
 
+SOURCE_CODE_BASE_DIR="~/src/github.com/enigmata"
+
 tmux has-session -t development
 
 if [ $? != 0 ]
 then
     tmux new-session -s development -n compile_edit -d
-    tmux send-keys -t development 'cd ~/src/github.com/enigmata' C-m
+    tmux send-keys -t development "cd $SOURCE_CODE_BASE_DIR" C-m
     tmux split-window -h -t development
-    tmux send-keys -t development:1.2 'cd ~/src/github.com/enigmata' C-m
+    tmux send-keys -t development:1.2 "cd $SOURCE_CODE_BASE_DIR" C-m
     tmux send-keys -t development:1.1 'clear' C-m
     tmux send-keys -t development:1.2 'clear' C-m
     tmux new-window -t development -n console
