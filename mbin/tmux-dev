@@ -1,7 +1,7 @@
 #!/bin/bash
 
 USAGE="
-Usage: tmux-dev  [--help]
+Usage: tmux-dev [sub directory] [--help]
 
 Create a tmux session called 'development', designed for programming.
 
@@ -13,6 +13,10 @@ If the 'development' session does not exist, then the session is
 created and attached to only if this script is not already running
 in a session
 
+If a sub directory is supplied, then set the file system directory
+of the two panes of the first window of the session as follows:
+   ~/src/github.com/enigmata/<sub directory>
+
 "
 
 if [[ "$1" == "--help" ]]
@@ -21,16 +25,32 @@ then
     exit 1
 fi
 
-SOURCE_CODE_BASE_DIR="~/src/github.com/enigmata"
+SOURCE_CODE_BASE_DIR=~/src/github.com/enigmata
+
+if [[ $# > 0 ]]
+then
+    TARGET_SOURCE_DIR="$SOURCE_CODE_BASE_DIR"/"$1"
+    if [[ ! -d "$TARGET_SOURCE_DIR" ]]
+    then
+        echo "ERROR: \"$1\" is not a valid sub dir of $SOURCE_CODE_BASE_DIR"
+        echo "$USAGE"
+        echo "Valid sub directories:"
+        ls $SOURCE_CODE_BASE_DIR
+        exit 1
+    fi
+else
+    TARGET_SOURCE_DIR="$SOURCE_CODE_BASE_DIR"
+fi
+
 
 tmux has-session -t development
 
 if [[ $? != 0 ]]
 then
     tmux new-session -s development -n compile_edit -d
-    tmux send-keys -t development "cd $SOURCE_CODE_BASE_DIR" C-m
+    tmux send-keys -t development "cd $TARGET_SOURCE_DIR" C-m
     tmux split-window -h -t development
-    tmux send-keys -t development:1.2 "cd $SOURCE_CODE_BASE_DIR" C-m
+    tmux send-keys -t development:1.2 "cd $TARGET_SOURCE_DIR" C-m
     tmux send-keys -t development:1.1 'clear' C-m
     tmux send-keys -t development:1.2 'clear' C-m
     tmux new-window -t development -n console
