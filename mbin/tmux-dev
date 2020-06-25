@@ -26,6 +26,8 @@ then
 fi
 
 SOURCE_CODE_BASE_DIR=~/src/github.com/enigmata
+TARGET_SOURCE_DIR=$SOURCE_CODE_BASE_DIR
+SESSION_NAME="development"
 
 if [[ $# > 0 ]]
 then
@@ -38,33 +40,31 @@ then
         ls $SOURCE_CODE_BASE_DIR
         exit 1
     fi
-else
-    TARGET_SOURCE_DIR="$SOURCE_CODE_BASE_DIR"
+    SESSION_NAME=$SESSION_NAME"_"$1
 fi
 
-
-tmux has-session -t development
+tmux has-session -t =$SESSION_NAME
 
 if [[ $? != 0 ]]
 then
-    tmux new-session -s development -n compile_edit -d
-    tmux send-keys -t development "cd $TARGET_SOURCE_DIR" C-m
-    tmux split-window -h -t development
-    tmux send-keys -t development:1.2 "cd $TARGET_SOURCE_DIR" C-m
-    tmux send-keys -t development:1.1 'clear' C-m
-    tmux send-keys -t development:1.2 'clear' C-m
-    tmux new-window -t development -n console
-    tmux send-keys -t development:2 'cd ~' C-m
-    tmux send-keys -t development:2 'clear' C-m
-    tmux select-window -t development:1
-    echo \"development\" session created
+    tmux new-session -s $SESSION_NAME -n compile_edit -d
+    tmux send-keys -t $SESSION_NAME "cd $TARGET_SOURCE_DIR" C-m
+    tmux split-window -h -t $SESSION_NAME
+    tmux send-keys -t $SESSION_NAME:1.2 "cd $TARGET_SOURCE_DIR" C-m
+    tmux send-keys -t $SESSION_NAME:1.1 'clear' C-m
+    tmux send-keys -t $SESSION_NAME:1.2 'clear' C-m
+    tmux new-window -t $SESSION_NAME -n console
+    tmux send-keys -t $SESSION_NAME:2 'cd ~' C-m
+    tmux send-keys -t $SESSION_NAME:2 'clear' C-m
+    tmux select-window -t $SESSION_NAME:1
+    echo \"$SESSION_NAME\" session created
 else
-    echo \"development\" session already exists
+    echo \"$SESSION_NAME\" session already exists
 fi
 
 if [[ -z "$TMUX" ]]
 then
-    tmux attach -t development
+    tmux attach -t =$SESSION_NAME
 else
     echo did not attach because you\'re already in a session
 fi
