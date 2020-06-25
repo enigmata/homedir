@@ -40,7 +40,7 @@ then
         ls $SOURCE_CODE_BASE_DIR
         exit 1
     fi
-    SESSION_NAME=$SESSION_NAME"_"$1
+    SESSION_NAME=$SESSION_NAME"_"${1%%/*}
 fi
 
 tmux has-session -t =$SESSION_NAME
