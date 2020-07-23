@@ -6,7 +6,7 @@ for PREFIX in `find . -type d ! -name '.'`
 do
     MAX_PIC=`ls -r ../${PREFIX}* | head -1`
 
-    if [[ $MAX_PIC =~ ^.*${PREFIX}([[:digit:]]+)\.[[:alpha:]]+$ ]]
+    if [[ $MAX_PIC =~ ^.*${PREFIX}([[:digit:]]+)\.[[:alnum:]]+$ ]]
     then
         INDEX=$(expr ${BASH_REMATCH[1]})
         if [[ `find $PREFIX -type f | wc -l` -gt 0 ]]
