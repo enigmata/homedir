@@ -3,13 +3,13 @@
 USAGE="
 Usage: tmux-dev [sub directory] [--help]
 
-Create a tmux session called 'development', designed for programming.
+Create a tmux session called 'dev', designed for programming.
 
-If the 'development' session already exists and this script is not
-running in a tmux session, then it will attach to the 'development'
+If the 'dev' session already exists and this script is not
+running in a tmux session, then it will attach to the 'dev'
 session.
 
-If the 'development' session does not exist, then the session is
+If the 'dev' session does not exist, then the session is
 created and attached to only if this script is not already running
 in a session
 
@@ -27,7 +27,7 @@ fi
 
 SOURCE_CODE_BASE_DIR=~/src/github.com/enigmata
 TARGET_SOURCE_DIR=$SOURCE_CODE_BASE_DIR
-SESSION_NAME="development"
+SESSION_NAME="dev"
 
 if [[ $# > 0 ]]
 then
