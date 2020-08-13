@@ -121,6 +121,7 @@ src/
 .minio/
 .mission-control/
 .mongorc.js
+.motd_shown
 .mozilla/
 .mylg.config
 .node-gyp/
