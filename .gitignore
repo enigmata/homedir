@@ -155,6 +155,7 @@ src/
 .vim/.netrwhist
 .w3m/
 .wget-hsts
+.vscode-server/
 .vscode/
 .xinputrc
 .xsession-errors
