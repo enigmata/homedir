@@ -13,6 +13,9 @@ then
     exit 1
 fi
 
+cd ~
+git submodule update --remote
+
 for dir in `git status | grep "modified:" | awk ' {print $2}'`
 do
     pushd $dir > /dev/null
