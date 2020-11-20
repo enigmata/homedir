@@ -11,8 +11,17 @@ clp = argparse.ArgumentParser(prog='tmux-go',
 
 clp.add_argument('--dev', action='store_true', help='create a programming session')
 clp.add_argument('--dir', help='set as current working directory')
+clp.add_argument('--kill', dest='kill_session_id', help='kill the specified tmux session')
 
 args = clp.parse_args()
+
+if args.kill_session_id is not None:
+   result = subprocess.run(["tmux", "has-session", "-t", args.kill_session_id], stderr=subprocess.DEVNULL)
+   if result.returncode == 0:
+      subprocess.run(["tmux", "kill-session", "-t", args.kill_session_id])
+   else:
+      print(f'ERROR Session {args.kill_session_id} does not exist')
+   sys.exit(1)
 
 session_name = 'futz'
 working_dir = '~'
@@ -35,6 +44,7 @@ if not os.path.isdir(working_dir):
 print(f'INFO Creating a tmux session "{session_name}" in directory "{working_dir}"')
 
 result = subprocess.run(["tmux", "has-session", "-t", session_name], stderr=subprocess.DEVNULL)
+
 if result.returncode != 0:
    print(f'INFO Session "{session_name}" does not exist, creating ...')
    subprocess.run(["tmux", "new-session", "-s", session_name, "-n", "home", "-d"], stderr=subprocess.DEVNULL)
