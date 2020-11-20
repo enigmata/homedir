@@ -1,95 +1,63 @@
-#!/bin/bash
+#!/usr/local/bin/python3
 
-USAGE="
-Usage: tmux-go [--dev [sub directory]] [--help]
+import argparse
+import os
+import os.path
+import subprocess
+import sys
 
-Create a preconfigured tmux session for general futzing around.
+additional_details='If the \'dev\' session already exists and this script is not \
+running in a tmux session, then it will attach to the \'dev\' session; \
+otherwise, the \'dev\' session is created and attached only if this script \
+is not running within a tmux session.'
 
-If the option '--dev' is specified, then a tmux session
-designed for programming is created, if it does not already exist.
+clp = argparse.ArgumentParser(prog='tmux-go',
+                              description='Create a preconfigured tmux session',
+                              epilog=additional_details)
 
-If the 'dev' session already exists and this script is not
-running in a tmux session, then it will attach to the 'dev'
-session.
+clp.add_argument('--dev', action='store_true', help='create a programming session')
+clp.add_argument('--dir', help='set as current working directory')
 
-If the 'dev' session does not exist, then the session is
-created and attached to only if this script is not already running
-within a tmux session.
+args = clp.parse_args()
 
-If a sub directory is supplied together with the '--dev' command-line
-option, then the file system directory of the two panes of the first window 
-of the session is set as follows:
-   ~/src/github.com/enigmata/<sub directory>
+session_name = 'futz'
+working_dir = '~'
 
-"
+if args.dev:
+   session_name = 'dev'
 
-if [[ "$1" == "--help" ]]
-then
-    echo "$USAGE"
-    exit 1
-fi
+if args.dir is not None:
+   working_dir = args.dir
+else:
+   if args.dev:
+      working_dir = '~/src/github.com/enigmata'
 
-DEFAULT_SESSION_NAME="futz"
-SESSION_NAME=$DEFAULT_SESSION_NAME
+working_dir = os.path.expanduser(working_dir)
 
-if [[ "$1" == "--dev" ]]
-then
-    SOURCE_CODE_BASE_DIR=~/src/github.com/enigmata
-    TARGET_SOURCE_DIR=$SOURCE_CODE_BASE_DIR
-    SESSION_NAME="dev"
+if not os.path.isdir(working_dir):
+   print(f'"{working_dir}" is not a directory!')
+   sys.exit(1)
 
-    if [[ $# > 1 ]]
-    then
-        TARGET_SOURCE_DIR="$SOURCE_CODE_BASE_DIR"/"$2"
-        if [[ ! -d "$TARGET_SOURCE_DIR" ]]
-        then
-            echo "ERROR: \"$2\" is not a valid sub dir of $SOURCE_CODE_BASE_DIR"
-            echo "$USAGE"
-            echo "Valid sub directories:"
-            ls $SOURCE_CODE_BASE_DIR
-            exit 1
-        fi
-        SESSION_NAME=$SESSION_NAME"_"${2%%/*}
-    fi
-fi
+print(f'INFO Creating a tmux session "{session_name}" in directory "{working_dir}"')
 
-tmux has-session -t =$SESSION_NAME
+result = subprocess.run(["tmux", "has-session", "-t", session_name], stderr=subprocess.DEVNULL)
+if result.returncode != 0:
+   print(f'INFO Session "{session_name}" does not exist, creating ...')
+   subprocess.run(["tmux", "new-session", "-s", session_name, "-n", "home", "-d"], stderr=subprocess.DEVNULL)
+   subprocess.run(["tmux", "split-window", "-h", "-t", session_name], stderr=subprocess.DEVNULL)
+   subprocess.run(["tmux", "send-keys", "-t", f'{session_name}:1.1', f'cd {working_dir}', "C-m"], stderr=subprocess.DEVNULL)
+   subprocess.run(["tmux", "send-keys", "-t", f'{session_name}:1.1', "clear", "C-m"], stderr=subprocess.DEVNULL)
+   subprocess.run(["tmux", "send-keys", "-t", f'{session_name}:1.2', f'cd {working_dir}', "C-m"], stderr=subprocess.DEVNULL)
+   subprocess.run(["tmux", "send-keys", "-t", f'{session_name}:1.2', "clear", "C-m"], stderr=subprocess.DEVNULL)
+   subprocess.run(["tmux", "new-window", "-t", f'{session_name}', "-n",  "alternate"], stderr=subprocess.DEVNULL)
+   subprocess.run(["tmux", "send-keys", "-t", f'{session_name}:2', f'cd {working_dir}', "C-m"], stderr=subprocess.DEVNULL)
+   subprocess.run(["tmux", "send-keys", "-t", f'{session_name}:2', "clear", "C-m"], stderr=subprocess.DEVNULL)
+   subprocess.run(["tmux", "select-window", "-t", f'{session_name}:1'], stderr=subprocess.DEVNULL)
+   print(f'INFO Session "{session_name}" created')
+else:
+   print(f'INFO Session "{session_name}" already exists')
 
-if [[ $? != 0 ]]
-then
-    if [[ "$SESSION_NAME" == "$DEFAULT_SESSION_NAME" ]]
-    then
-        tmux new-session -s $SESSION_NAME -n goofing -d
-        tmux send-keys -t $SESSION_NAME "cd $HOME" C-m
-        tmux split-window -h -t $SESSION_NAME
-        tmux send-keys -t $SESSION_NAME:1.2 "cd $HOME" C-m
-        tmux send-keys -t $SESSION_NAME:1.1 "clear" C-m
-        tmux send-keys -t $SESSION_NAME:1.2 "clear" C-m
-        tmux new-window -t $SESSION_NAME -n code
-        tmux send-keys -t $SESSION_NAME:2 "cd $HOME/src" C-m
-        tmux send-keys -t $SESSION_NAME:2 "clear" C-m
-        tmux select-window -t $SESSION_NAME:1
-    else
-        tmux new-session -s $SESSION_NAME -n compile_edit -d
-        tmux send-keys -t $SESSION_NAME "cd $TARGET_SOURCE_DIR" C-m
-        tmux split-window -h -t $SESSION_NAME
-        tmux send-keys -t $SESSION_NAME:1.2 "cd $TARGET_SOURCE_DIR" C-m
-        tmux send-keys -t $SESSION_NAME:1.1 'clear' C-m
-        tmux send-keys -t $SESSION_NAME:1.2 'clear' C-m
-        tmux new-window -t $SESSION_NAME -n console
-        tmux send-keys -t $SESSION_NAME:2 'cd ~' C-m
-        tmux send-keys -t $SESSION_NAME:2 'clear' C-m
-        tmux select-window -t $SESSION_NAME:1
-    fi
-    echo \"$SESSION_NAME\" session created
-
-else
-    echo \"$SESSION_NAME\" session already exists
-fi
-
-if [[ -z "$TMUX" ]]
-then
-    tmux attach -t =$SESSION_NAME
-else
-    echo did not attach because you\'re already in a session
-fi
+if os.getenv('TMUX') is None:
+   subprocess.run(["tmux", "attach", "-t", session_name], stderr=subprocess.DEVNULL)
+else:
+   print('WARN Did not attach to session because aleady in a session')
