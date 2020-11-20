@@ -6,14 +6,8 @@ import os.path
 import subprocess
 import sys
 
-additional_details='If the \'dev\' session already exists and this script is not \
-running in a tmux session, then it will attach to the \'dev\' session; \
-otherwise, the \'dev\' session is created and attached only if this script \
-is not running within a tmux session.'
-
 clp = argparse.ArgumentParser(prog='tmux-go',
-                              description='Create a preconfigured tmux session',
-                              epilog=additional_details)
+                              description='Create a preconfigured tmux session')
 
 clp.add_argument('--dev', action='store_true', help='create a programming session')
 clp.add_argument('--dir', help='set as current working directory')
