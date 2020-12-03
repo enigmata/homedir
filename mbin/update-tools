@@ -2,5 +2,8 @@
 
 import subprocess
 
-subprocess.run(["brew", "upgrade"])
+print('\nUPDATE: Rust ...\n')
 subprocess.run(["rustup", "update"])
+
+print('\nUPDATE: Homebrew ...\n')
+subprocess.run(["brew", "upgrade"])
