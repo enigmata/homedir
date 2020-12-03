@@ -139,6 +139,7 @@ src/
 .pulse-cookie
 .pylint.d/
 .python_history
+.pythonhist
 .qalculate/
 .rediscli_history
 .rnd
