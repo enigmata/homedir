@@ -4,7 +4,7 @@
 set number
 set ruler
 set autoindent
-set relativenumber
+"set relativenumber
 set nowrap        " plays nicer with relativenumber
 set wildmenu      " visual autocomplete for cmdline
 set laststatus=2  " always display status line
@@ -25,7 +25,7 @@ nmap <leader>L :set list!<CR>
 """""""""""""""""""""""""""""""""""""""""
 " Plugins
 """""""""""""""""""""""""""""""""""""""""
-syntax on           " syntax highlighting
+syntax enable       " syntax highlighting
 filetype on         " detect file types
 filetype plugin on
 filetype indent on  " load filetype-specific indent files
