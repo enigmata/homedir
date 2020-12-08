@@ -34,3 +34,6 @@
 [submodule "/Users/randy/.vim/pack/rust/start/rust.vim"]
 	path = .vim/pack/rust/start/rust.vim
 	url = https://github.com/rust-lang/rust.vim
+[submodule ".vim/pack/cpp/start/vim-cpp-modern"]
+	path = .vim/pack/cpp/start/vim-cpp-modern
+	url = https://github.com/bfrg/vim-cpp-modern
