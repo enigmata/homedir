@@ -23,8 +23,9 @@ nmap <leader>o :set paste!<CR>:setlocal paste?<CR>
 nmap <leader>L :set list!<CR>
 
 """""""""""""""""""""""""""""""""""""""""
-" Plugins
+" Syntax highlighting
 """""""""""""""""""""""""""""""""""""""""
+let python_highlight_all=1
 syntax enable       " syntax highlighting
 filetype on         " detect file types
 filetype plugin on
