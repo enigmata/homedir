@@ -43,3 +43,6 @@
 [submodule ".vim/pack/json/start/vim-json"]
 	path = .vim/pack/json/start/vim-json
 	url = https://github.com/elzr/vim-json.git
+[submodule ".vim/pack/python/start/python-syntax"]
+	path = .vim/pack/python/start/python-syntax
+	url = https://github.com/vim-python/python-syntax.git
