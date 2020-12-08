@@ -37,3 +37,6 @@
 [submodule ".vim/pack/cpp/start/vim-cpp-modern"]
 	path = .vim/pack/cpp/start/vim-cpp-modern
 	url = https://github.com/bfrg/vim-cpp-modern
+[submodule ".vim/pack/markdown/start/vim-markdown"]
+	path = .vim/pack/markdown/start/vim-markdown
+	url = https://github.com/plasticboy/vim-markdown.git
