@@ -49,3 +49,6 @@
 [submodule ".vim/pack/latex/start/vimtex"]
 	path = .vim/pack/latex/start/vimtex
 	url = https://github.com/lervag/vimtex.git
+[submodule ".vim/pack/vim/start/vim-devicons"]
+	path = .vim/pack/vim/start/vim-devicons
+	url = https://github.com/ryanoasis/vim-devicons.git
