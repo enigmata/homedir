@@ -1,6 +1,9 @@
-#!/usr/local/bin/python3
+#!/usr/bin/env python
 
 import subprocess
+
+print('\nUPDATE: Submodules...\n')
+subprocess.run(["git-submodule-update"])
 
 print('\nUPDATE: Rust ...\n')
 subprocess.run(["rustup", "update"])
