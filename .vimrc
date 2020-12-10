@@ -116,10 +116,6 @@ function! <SID>SynStack()
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 
-if exists('*HexHighlight()')
-  nmap <leader>h :call HexHighlight()<Return>
-endif
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Line bubbling
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -134,3 +130,20 @@ vmap <D-Down> ]egv
 " file browser / navigation
 """""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <leader>f :NERDTreeToggle<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""
+" Navigate windows from any mode
+"""""""""""""""""""""""""""""""""""""""""""""""""
+tnoremap <leader>h <C-\><C-N><C-w>h
+tnoremap <leader>j <C-\><C-N><C-w>j
+tnoremap <leader>k <C-\><C-N><C-w>k
+tnoremap <leader>l <C-\><C-N><C-w>l
+inoremap <leader>h <C-\><C-N><C-w>h
+inoremap <leader>j <C-\><C-N><C-w>j
+inoremap <leader>k <C-\><C-N><C-w>k
+inoremap <leader>l <C-\><C-N><C-w>l
+nnoremap <leader>h <C-w>h
+nnoremap <leader>j <C-w>j
+nnoremap <leader>k <C-w>k
+nnoremap <leader>l <C-w>l
+
