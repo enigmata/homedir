@@ -8,10 +8,18 @@ import sys
 
 clp = argparse.ArgumentParser(prog='git-submodule-update',
                               description='Update all submodules\' remote repos')
+
+clp.add_argument('--init', action='store_true', help='only initialize submodules')
+
 args = clp.parse_args()
+
+if args.init:
+   subprocess.run(["git", "submodule", "update", "--init"])
+   sys.exit(0)
 
 submod_result = subprocess.run(["git", "submodule", "update", "--remote"],
                                capture_output=True)
+
 if submod_result.returncode != 0:
     print(f'ERROR: submodule update failed with rc={submod_result.returncode}')
     sys.exit(1)
