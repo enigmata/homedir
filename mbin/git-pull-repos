@@ -1,27 +1,42 @@
-#!/bin/bash
+#!/usr/bin/env python
 
-USAGE="\n
-Usage: git_pull_repos [--help]\n
-\n
-For each repo in the sub-directories of the current working\n
-directory from which this script is executed, call \"git pull\".\n
-\n
-"
+import argparse
+import os
+import subprocess
+import sys
 
-if [[ "$1" == "--help" ]]
-then
-    echo -e $USAGE
-    exit 1
-fi
+from pathlib import Path
 
-for dir in `find . -type d -depth 1`
-do
-    pushd $dir > /dev/null
-    echo -e ">>>>>>>>>>>>>>>>>>>>>>"
-    echo -e "`basename $dir`: git pull\n"
-    git pull
-    echo -e "<<<<<<<<<<<<<<<<<<<<<<\n"
-    popd > /dev/null
-done
+clp = argparse.ArgumentParser(prog='git-pull-repos',
+                              description='For each sub-dir, pull git repos',
+                              epilog='Default root dir is ~/src/github.com/enigmata')
 
-exit 0
+clp.add_argument('--dir', dest='root_dir',
+                          help='pull repos from sub-dirs of this root dir')
+
+args = clp.parse_args()
+
+root_dir = '~/src/github.com/enigmata'
+
+if args.root_dir is not None:
+   root_dir = args.root_dir
+
+repos_root_dir = Path(root_dir).expanduser().resolve()
+
+if not repos_root_dir.is_dir():
+    print(f'ERROR: "{repos_root_dir}" is not a directory!')
+    sys.exit(1)
+
+print(f'INFO Invoking "git pull" for each sub-directory of "{repos_root_dir}" ...')
+
+for repo_root_dir in (d for d in repos_root_dir.iterdir() if d.is_dir()):
+    os.chdir(repo_root_dir)
+    banner_len = len(repo_root_dir.as_posix()) + 13
+    if (repo_root_dir / ".git").is_dir():
+        print("=" * banner_len)
+        print(f'PULLING: {repo_root_dir} ...')
+        print("=" * banner_len)
+        subprocess.run(["git", "pull"])
+    os.chdir(repos_root_dir)
+
+sys.exit(0)
