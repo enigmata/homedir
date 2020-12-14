@@ -17,7 +17,7 @@ then  # OS X
     export PATH="$PATH:/usr/local/opt/python/libexec/bin"
     export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 else
-    export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/snap/bin
+    export PATH=$PATH:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:/home/linuxbrew/.linuxbrew/opt/python@3.9/libexec/bin:/snap/bin
     export MANPATH=/home/linuxbrew/.linuxbrew/share/man:$MANPATH
     export INFOPATH=/home/linuxbrew/.linuxbrew/share/info:$INFOPATH
 
