@@ -85,6 +85,8 @@ src/
 .config/user-dirs.locale
 .config/yelp/
 .cpan/
+.crates.toml
+.crates2.json
 .cups/
 .dbshell
 .dbus/
