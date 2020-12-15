@@ -1,4 +1,4 @@
-#!/usr/local/bin/python3
+#!/usr/bin/env python3
 
 # TODO: accommodate diff platforms (MacOS only now)
 # TODO: automatically set default based on available resources (cores, mem)
