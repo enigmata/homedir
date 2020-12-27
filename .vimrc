@@ -156,3 +156,8 @@ nnoremap <leader>u <C-w>t
 nnoremap <leader>n <C-w>b
 nnoremap <leader>p <C-w>p
 
+"""""""""""""""""""""""""""""""""""""""""""""""""
+" Fuzzy search config
+"""""""""""""""""""""""""""""""""""""""""""""""""
+set rtp+=/usr/local/opt/fzf
+
