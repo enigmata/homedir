@@ -38,6 +38,7 @@ src/
 .bundle/
 .cf/
 .CFUserTextEncoding
+.cht.sh/
 .cisco/
 .compiz/
 .config/1Password
