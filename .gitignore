@@ -1,6 +1,3 @@
-# cannot yet make these portable across platforms and user accounts; but intent is to go there someday
-.gitconfig
-
 # secrets that cannot live in the repo
 .private
 .ssh/
