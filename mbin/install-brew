@@ -1,17 +1,32 @@
 #!/usr/bin/env python3
 
+import argparse
 import subprocess
 import sys
 
 brew_tap_install_cmd = ["brew","install"]
 tap_install_list = ['bash','bat','cmake','fontconfig','fzf','gcc','git','git-delta','git-filter-repo','go','gotop','llvm','neovim','neofetch','nnn','pkg-config','poppler','python@3.9','rg','rlwrap','ssh-copy-id','sysdig','the_silver_searcher','tmux','tree','wget']
 homebrew_install_cmd = ['/bin/bash', '-c', '"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"']
+
+clp = argparse.ArgumentParser(prog='install-brew',
+                              description='Install default set of homebrew taps/casks')
+
+clp.add_argument('--list', action='store_true', help='list, do not install, default set of taps/casks')
+
+args = clp.parse_args()
+
+print("\nDefault homebrew taps/casks:")
+print(' ', *tap_install_list, sep='\n ')
+
+if args.list:
+   sys.exit(0)
+
+print("\nInstalling ...\n")
+
 try_install = True
 
 while try_install:
     try:
-        print("Installing brew taps:")
-        print('', *tap_install_list, sep='\n ')
         install_result = subprocess.run(brew_tap_install_cmd + tap_install_list)
     except FileNotFoundError:
         print("FYI: homebrew is not installed or not in the PATH")
