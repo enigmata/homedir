@@ -4,13 +4,11 @@
 set number
 set ruler
 set autoindent
-"set relativenumber
 set nowrap        " plays nicer with relativenumber
 set wildmenu      " visual autocomplete for cmdline
 set laststatus=2  " always display status line
 set cpoptions=$   " put a '$' at end of changed text
 set ts=4 sts=4 sw=4 expandtab " prefer spaces to tab characters
-set listchars=tab:▸\ ,eol:¬
 
 let mapleader = ";"
 
@@ -19,8 +17,12 @@ nmap <leader>w :setlocal wrap!<CR>:setlocal wrap?<CR>
 
 nmap <leader>o :set paste!<CR>:setlocal paste?<CR>
 
-" toggle showing white space chars
-nmap <leader>L :set list!<CR>
+"""""""""""""""""""""""""""""""""""""""""
+" Dealing with white space chars
+"""""""""""""""""""""""""""""""""""""""""
+set listchars=tab:▸\ ,eol:¬
+nmap <leader>EOL :set list!<CR>
+nnoremap <leader>DEOL <BAR> :%s/\\s\\+$//gc<CR>
 
 """""""""""""""""""""""""""""""""""""""""
 " Syntax highlighting
