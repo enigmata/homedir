@@ -1,4 +1,5 @@
-﻿$Env:Path = $Env:Path + ";C:\Program Files\git\bin"
+$env:xdg_config_home="$HOME\.config"
+
 function prompt {
   $cur_dir = get-location
   $esc = [char]27
@@ -11,4 +12,8 @@ function ln($target, $link) {
 
 function ll($parms) {
   get-childitem -force $parms
+}
+
+function spath() {
+  $env:path -split(";")
 }
