@@ -181,18 +181,36 @@ tensorflow/
 # home sub-dirs that are not portable
 .DS_Store
 .Trash/
+3D Objects/
+Application Data/
 Applications/
+AppData/
 Box Sync/
 Conferencing/
+Contacts/
+Cookies/
 Desktop/
 Documents/
 Downloads/
 Dropbox/
-IBMERS/
+Favorites/
 Library/
+Links/
+Local Settings/
+MicrosoftEdgeBackups/
 Movies/
 Music/
+My Documents/
+NetHood/
+NTUSER*
+OneDrive/
 Pictures/
+PrintHood/
 Public/
+Recent/
+Saved Games/
+Searches/
+SendTo/
+Start Menu/
 Templates/
 Videos/
