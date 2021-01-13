@@ -90,6 +90,7 @@ src/
 .dbus/
 .dmrc
 .docker/
+.dotnet/
 .dropbox-dist/
 .dropbox/
 .dyalog/
