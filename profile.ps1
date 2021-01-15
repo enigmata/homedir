@@ -1,3 +1,5 @@
+$env:path=$env:path + ";$HOME\mbin"
+
 $env:xdg_config_home="$HOME\.config"
 
 function prompt {
