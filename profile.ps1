@@ -1,4 +1,4 @@
-$env:path=$env:path + ";$HOME\mbin"
+$env:path=$env:path + ";$HOME\mbin;$HOME\bin"
 
 $env:xdg_config_home="$HOME\.config"
 
