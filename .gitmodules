@@ -58,3 +58,6 @@
 [submodule ".vim/pack/powershell/start/vim-ps1"]
 	path = .vim/pack/powershell/start/vim-ps1
 	url = https://github.com/PProvost/vim-ps1.git
+[submodule ".vim/pack/syntax/start/vim-polyglot"]
+	path = .vim/pack/syntax/start/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot.git
