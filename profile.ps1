@@ -1,4 +1,5 @@
 $env:path=$env:path + ";$HOME\mbin;$HOME\bin"
+$env:path=$env:path + ";c:\ProgramData\chocolatey\lib\gsudo\bin"
 
 $env:xdg_config_home="$HOME\.config"
 
