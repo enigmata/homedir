@@ -15,6 +15,8 @@ print('\nStart? ("y" to begin, "n" to abort)')
 response=input()
 if response.upper()!="Y":
     print('Aborting')
-    sys.exit(0)
+    sys.exit(1)
 
-#subprocess.run(["sudo", "visudo"])
+subprocess.run(["sudo", "visudo"])
+
+sys.exit(0)

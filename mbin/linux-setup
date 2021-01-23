@@ -38,10 +38,16 @@ if args.bootstrap:
 
 for mod_num, module in enumerate(setup_modules, start=1):
     print_banner(mod_num, module[0])
-    #result=subprocess.run([module[1]])
-    #if result.returncode != 0:
-    #    print(f'ERROR: setup module failed with rc={submod_result.returncode}')
-    #    sys.exit(1)
+    try:
+        result=subprocess.run(['./'+module[1]])
+    except FileNotFoundError:
+        print(f'WARNING: Module "{module[0]}" not found. Skipping ...')
+        continue
+
+    if result.returncode != 0:
+        print(f'ERROR: Setup module failed with rc={result.returncode}')
+    else:
+        print("Setup completed successfuly")
 
 print_banner(len(setup_modules)+1, 'Wrapping Up')
 

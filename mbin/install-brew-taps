@@ -6,7 +6,6 @@ import sys
 
 brew_tap_install_cmd = ["brew","install"]
 tap_install_list = ['bash','bat','cmake','cppman','fontconfig','fzf','gcc','git','git-delta','git-filter-repo','go','gotop','llvm','neovim','neofetch','nnn','pkg-config','poppler','python@3.9','rg','rlwrap','ssh-copy-id','the_silver_searcher','tmux','tree','wget']
-homebrew_install_cmd = ['/bin/bash', '-c', '"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"']
 
 clp = argparse.ArgumentParser(prog='install-brew',
                               description='Install default set of homebrew taps/casks')
@@ -23,29 +22,17 @@ if args.list:
 
 print("\nInstalling ...\n")
 
-try_install = True
+try:
+    install_result = subprocess.run(brew_tap_install_cmd + tap_install_list)
+except FileNotFoundError:
+    print("ERROR: homebrew is not installed, or not in the \$PATH")
+    print('Aborting installation')
+    sys.exit(1)
 
-while try_install:
-    try:
-        install_result = subprocess.run(brew_tap_install_cmd + tap_install_list)
-    except FileNotFoundError:
-        print("FYI: homebrew is not installed or not in the PATH")
-        response = input('Install homebrew? (y/n) ')
-        if response.upper() == 'Y':
-            install_result = subprocess.run(homebrew_install_cmd)
-            if install_result.returncode == 0:
-                print("Homebrew installed successfully.")
-                continue
-        else:
-            print('Aborting installation')
-            sys.exit(1)
-    if install_result.returncode == 0:
-        print('Installation was successful')
-        try_install = False
-    else:
-        response = input('Installation failed. Try again? (y/n) ')
-        if response.upper() == 'N':
-            print('Aborting installation')
-            sys.exit(1)
+if install_result.returncode != 0:
+    print('Installation failed')
+    sys.exit(1)
+
+print('Installation was successful')
 
 sys.exit(0)
