@@ -30,7 +30,14 @@ clp = argparse.ArgumentParser(prog='linux-setup',
 
 clp.add_argument('--bootstrap', action='store_true', help='copy this script to machine, then start setup')
 
+clp.add_argument('--list', action='store_true', help='list the setup modules that can be installed')
+
 args = clp.parse_args()
+
+if args.list:
+    for module in setup_modules:
+        print(f'{module[0]:20}| {module[1]}')
+    sys.exit(0)
 
 if args.bootstrap:
     print("Option is not yet implemented: --bootstrap")
