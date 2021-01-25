@@ -6,7 +6,7 @@ import sys
 
 setup_modules=[['Passwordless sudo', 'linux-setup-sudo'],
                ['SSH', 'linux-setup-ssh'],
-               ['Essential Utilities', 'linux-setup-utils'],
+               ['Essential foundation', 'linux-setup-base'],
                ['Home Directory', 'linux-setup-homedir'],
                ['Homebrew', 'linux-setup-brew'],
                ['Homebrew taps', 'install-brew-taps'],
