@@ -7,13 +7,13 @@ import sys
 
 user=os.getenv('USER')
 
-home_dir=Path(os.getenv('HOME'))
-bin_dir=home_dir/'bin'
-cargo_config=home_dir/'.cargo'/'config.toml'
+home_dir=os.getenv('HOME')
+bin_dir=home_dir+'/bin'
+cargo_config=home_dir+'/.cargo/config.toml'
 
 config_toml="""
 [install]
-root = """+home_dir+"""
+root = '"""+home_dir+"""'
 [term]
 verbose = false
 color = 'auto'
