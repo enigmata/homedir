@@ -16,8 +16,7 @@ setup_modules=[['Passwordless sudo', 'linux-setup-sudo'],
                ['1Password', 'linux-setup-1passwd'],
                ['Dropbox', 'linux-setup-dropbox'],
                ['Private config', 'linux-setup-privatecfg'],
-               ['Cheatsheet', 'linux-setup-chtsh'],
-               ['GNOME Tweaks', 'linux-setup-gnometweaks']]
+               ['Cheatsheet', 'linux-setup-chtsh']]
 
 def print_banner(phase_num: int, phase_text: str):
     banner_len=8+len(str(phase_num))+len(phase_text)
