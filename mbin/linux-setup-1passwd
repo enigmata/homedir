@@ -13,7 +13,7 @@ if result.returncode!=0:
     print(f'ERROR:  Failed to add 1Password apt repo with rc={result.returncode}. Exiting.')
     sys.exit(1)
 
-result=subprocess.run("sudo apt update && sudo apt install 1password",shell=True)
+result=subprocess.run("sudo apt update && sudo apt-get --yes install 1password",shell=True)
 if result.returncode!=0:
     print(f'ERROR:  Failed to install 1Password with rc={result.returncode}. Exiting.')
     sys.exit(1)
