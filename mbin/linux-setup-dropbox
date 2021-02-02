@@ -13,7 +13,7 @@ if result.returncode!=0:
     print(f'ERROR:  Failed to install the dropbox cmd-line utility with rc={result.returncode}. Exiting.')
     sys.exit(1)
 
-result=subprocess.run("cd ~/Dropbox; dropbox.py autostart y; dropbox.py start",shell=True)
+result=subprocess.run("mkdir ~/Dropbox; cd ~/Dropbox; dropbox.py autostart y; dropbox.py start",shell=True)
 if result.returncode!=0:
     print(f'ERROR:  Failed to start Dropbox daemon with rc={result.returncode}. Exiting.')
     sys.exit(1)
