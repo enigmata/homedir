@@ -3,7 +3,7 @@
 import subprocess
 
 print('\nUPDATE: Submodules...\n')
-subprocess.run(["git-submodule-update"])
+subprocess.run(["git-submodule-update.py"])
 
 print('\nUPDATE: Rust ...\n')
 subprocess.run(["rustup", "update"])
