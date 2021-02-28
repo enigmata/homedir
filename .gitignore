@@ -168,6 +168,7 @@ src/
 .xsession-errors.old
 .Xauthority
 Dropbox
+EXCEL.box
 curr-pkgs.txt
 demo/
 examples.desktop
