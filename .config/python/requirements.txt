@@ -1,3 +1,4 @@
+pip
 beautifulsoup4
 bpython
 jupyterlab
