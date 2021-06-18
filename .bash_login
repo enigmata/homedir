@@ -33,9 +33,9 @@ export PATH=$PATH:$OLDPATH:$HOME/.cargo/bin:/usr/local/sbin
 alias ll='exa -la'
 alias llg='exa -la --git'
 alias lsof-listen='lsof -iTCP -sTCP:LISTEN'
-alias kfyre='kubectl --kubeconfig ~/.kubefyre/admin.conf'
+alias cat='bat'
 
-export GIT_EDITOR=vim
+export GIT_EDITOR=nvim
 
 export GOPATH=$HOME
 export GOBIN=~/bin
