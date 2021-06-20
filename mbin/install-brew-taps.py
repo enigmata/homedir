@@ -6,7 +6,7 @@ import subprocess
 import sys
 
 brew_tap_install_cmd = ["brew","install"]
-tap_install_list = ['bash','bat','cmake','cppman','dos2unix','exa','fontconfig','fzf','gcc','git','git-delta','git-filter-repo','go','gotop','llvm','neovim','neofetch','nnn','pkg-config','python@3.9','rg','rlwrap','ssh-copy-id','the_silver_searcher','tmux','tree','wget']
+tap_install_list = ['bash','bat','cmake','cppman','dos2unix','dust','exa','fontconfig','fzf','gcc','git','git-delta','git-filter-repo','go','gotop','llvm','neovim','neofetch','nnn','pkg-config','python@3.9','rg','rlwrap','ssh-copy-id','the_silver_searcher','tmux','tree','wget']
 
 clp = argparse.ArgumentParser(prog='install-brew',
                               description='Install default set of homebrew taps/casks')

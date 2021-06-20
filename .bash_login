@@ -34,6 +34,7 @@ alias ll='exa -la'
 alias llg='exa -la --git'
 alias lsof-listen='lsof -iTCP -sTCP:LISTEN'
 alias cat='bat'
+alias du='dust'
 
 export GIT_EDITOR=nvim
 
