@@ -36,6 +36,7 @@ alias cat='bat'
 alias du='dust'
 alias df='duf'
 alias tree='br -i'
+alias find='fd -HIl'
 
 export GIT_EDITOR=nvim
 
