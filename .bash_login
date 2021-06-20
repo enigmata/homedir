@@ -37,6 +37,7 @@ alias du='dust'
 alias df='duf'
 alias tree='br -i'
 alias find='fd -HIl'
+alias top='glances'
 
 export GIT_EDITOR=nvim
 
