@@ -33,6 +33,7 @@ alias llg='exa -la --git'
 alias lsof-listen='lsof -iTCP -sTCP:LISTEN'
 alias cat='bat'
 alias du='dust'
+alias df='duf'
 
 export GIT_EDITOR=nvim
 
