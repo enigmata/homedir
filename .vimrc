@@ -168,6 +168,10 @@ command! -bang -nargs=? -complete=dir Files
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins brought to you by https://github.com/junegunn/vim-plug
+"  ':PlugInstall'  - install new plugins
+"  ':PlugUpdate'   - update installed plugins
+"  ':PlugUpgrade'  - updata vim-plug itself
+"  ':PlugStatus'   - how are the installed plugins?
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }

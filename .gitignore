@@ -159,6 +159,7 @@ src/
 .travis/
 .v8flags*
 .viminfo
+.vim/plugged/
 .vim/.netrwhist
 .w3m/
 .wget-hsts
