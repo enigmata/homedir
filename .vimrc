@@ -165,3 +165,10 @@ set rtp+=/usr/local/opt/fzf
 set rtp+=/home/linuxbrew/.linuxbrew/opt/fzf/
 command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(<q-args>, {'options': ['--bind', 'J:down,K:up,ctrl-j:preview-down,ctrl-k:preview-up,ctrl-f:preview-page-down,ctrl-b:preview-page-up', '--preview', '~/.vim/pack/files/start/fzf/bin/preview.sh {}']}, <bang>0)
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugins brought to you by https://github.com/junegunn/vim-plug
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+call plug#begin('~/.vim/plugged')
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+call plug#end()
