@@ -25,6 +25,3 @@
 [submodule ".vim/pack/vim/start/vim-devicons"]
 	path = .vim/pack/vim/start/vim-devicons
 	url = https://github.com/ryanoasis/vim-devicons.git
-[submodule ".vim/pack/files/start/fzf"]
-	path = .vim/pack/files/start/fzf
-	url = git@github.com:junegunn/fzf.vim.git
