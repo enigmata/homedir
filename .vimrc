@@ -36,8 +36,22 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'rwhorman/vim-colors-solarized'
 call plug#end()
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Color Schemes and Syntax Highlighting
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set background=dark
+colorscheme solarized 
+
+" Show syntax highlighting groups for word under cursor
+nmap <C-S-P> :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
 
 """""""""""""""""""""""""""""""""""""""""
 " Syntax highlighting
@@ -119,21 +133,6 @@ set spelllang=en_ca
 set dictionary=/usr/share/dict/words
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Color Schemes and Syntax Highlighting
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set background=dark
-colorscheme solarized 
-
-" Show syntax highlighting groups for word under cursor
-nmap <C-S-P> :call <SID>SynStack()<CR>
-function! <SID>SynStack()
-  if !exists("*synstack")
-    return
-  endif
-  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunc
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Line bubbling
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Bubble single lines
@@ -180,4 +179,29 @@ set rtp+=/usr/local/opt/fzf
 set rtp+=/home/linuxbrew/.linuxbrew/opt/fzf/
 command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(<q-args>, {'options': ['--bind', 'J:down,K:up,ctrl-j:preview-down,ctrl-k:preview-up,ctrl-f:preview-page-down,ctrl-b:preview-page-up', '--preview', '~/.vim/pack/files/start/fzf/bin/preview.sh {}']}, <bang>0)
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Status line
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" color schemes:
+"   cyan > green > gray < green < cyan
+"exe "hi! vimStatuslineBufInfo ctermbg=6 ctermfg=7"
+"exe "hi! vimStatuslineBufInfoSep ctermbg=2 ctermfg=6"
+"exe "hi! vimStatuslineFileInfo ctermbg=2 ctermfg=7"
+"exe "hi! vimStatuslineFileInfoSep ctermbg=0 ctermfg=2"
+"exe "hi! vimStatuslineCenter ctermbg=0 ctermfg=11"
+"   blue > yellow > gray < yellow < blue
+"exe "hi! vimStatuslineBufInfo ctermbg=4 ctermfg=7"
+"exe "hi! vimStatuslineBufInfoSep ctermbg=3 ctermfg=4"
+"exe "hi! vimStatuslineFileInfo ctermbg=3 ctermfg=7"
+"exe "hi! vimStatuslineFileInfoSep ctermbg=0 ctermfg=3"
+"exe "hi! vimStatuslineCenter ctermbg=0 ctermfg=11"
+"   green > blue > gray < blue < green
+exe "hi! vimStatuslineBufInfo ctermbg=2 ctermfg=0"
+exe "hi! vimStatuslineBufInfoSep ctermbg=4 ctermfg=2"
+exe "hi! vimStatuslineFileInfo ctermbg=4 ctermfg=0"
+exe "hi! vimStatuslineFileInfoSep ctermbg=0 ctermfg=4"
+exe "hi! vimStatuslineCenter ctermbg=0 ctermfg=11"
+
+set statusline=%#vimStatuslineBufInfo#Buffer=%n\ %#vimStatuslineBufInfoSep#%#vimStatuslineFileInfo#\ %t%r%m%h\ %#vimStatuslineFileInfoSep#%#vimStatuslineCenter#\ %f%=%#vimStatuslineFileinfoSep#%#vimStatuslineFileInfo#\ %y%q\ %#vimStatuslineBufInfoSep#%#vimStatuslineBufInfo#\ col=%c,line=%l/%L(%p%%)\ 
 
