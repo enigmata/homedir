@@ -10,9 +10,6 @@
 [submodule ".tmux/plugins/tmux-yank"]
 	path = .tmux/plugins/tmux-yank
 	url = https://github.com/tmux-plugins/tmux-yank
-[submodule ".vim/pack/colors/opt/solarize"]
-	path = .vim/pack/colors/opt/solarize
-	url = https://github.com/rwhorman/vim-colors-solarized.git
 [submodule ".vim/pack/statusline"]
 	path = .vim/pack/statusline
 	url = https://github.com/rwhorman/vim-statusline.git
