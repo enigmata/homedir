@@ -76,3 +76,5 @@ BGFG_COLOUR_BLUE_ON_BLK="\[\033[40;34m\]"
 export PS1="${BGFG_COLOUR_BLK_ON_GREEN}\u@\h ${BGFG_COLOUR_GREEN_ON_BLUE}${UNC_SYM_RIGHT_ARROW}${BGFG_COLOUR_BLK_ON_BLUE} \w ${BGFG_COLOUR_BLUE_ON_BLK}${UNC_SYM_RIGHT_ARROW}${COLOUR_OFF}\n$ "
 
 . ~/.bash_completion
+
+source ~/.config/broot/launcher/bash/br

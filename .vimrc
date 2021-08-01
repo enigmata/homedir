@@ -175,4 +175,5 @@ command! -bang -nargs=? -complete=dir Files
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'sheerun/vim-polyglot'
 call plug#end()

@@ -10,15 +10,6 @@
 [submodule ".tmux/plugins/tmux-yank"]
 	path = .tmux/plugins/tmux-yank
 	url = https://github.com/tmux-plugins/tmux-yank
-[submodule ".vim/pack/nginx"]
-	path = .vim/pack/nginx
-	url = git@github.com:rwhorman/vim-nginx.git
-[submodule ".vim/pack/cmake/start/cmake-syntax"]
-	path = .vim/pack/cmake/start/cmake-syntax
-	url = https://github.com/pboettch/vim-cmake-syntax.git
-[submodule ".vim/pack/go/start/vim-go"]
-	path = .vim/pack/go/start/vim-go
-	url = https://github.com/fatih/vim-go.git
 [submodule ".vim/pack/colors/opt/solarize"]
 	path = .vim/pack/colors/opt/solarize
 	url = https://github.com/rwhorman/vim-colors-solarized.git
@@ -28,21 +19,6 @@
 [submodule ".vim/pack/ctags"]
 	path = .vim/pack/ctags
 	url = https://github.com/rwhorman/vim-ctags
-[submodule "/Users/randy/.vim/pack/rust/start/rust.vim"]
-	path = .vim/pack/rust/start/rust.vim
-	url = https://github.com/rust-lang/rust.vim
-[submodule ".vim/pack/cpp/start/vim-cpp-modern"]
-	path = .vim/pack/cpp/start/vim-cpp-modern
-	url = https://github.com/bfrg/vim-cpp-modern
-[submodule ".vim/pack/markdown/start/vim-markdown"]
-	path = .vim/pack/markdown/start/vim-markdown
-	url = https://github.com/plasticboy/vim-markdown.git
-[submodule ".vim/pack/json/start/vim-json"]
-	path = .vim/pack/json/start/vim-json
-	url = https://github.com/elzr/vim-json.git
-[submodule ".vim/pack/python/start/python-syntax"]
-	path = .vim/pack/python/start/python-syntax
-	url = https://github.com/vim-python/python-syntax.git
 [submodule ".vim/pack/latex/start/vimtex"]
 	path = .vim/pack/latex/start/vimtex
 	url = https://github.com/lervag/vimtex.git
@@ -52,9 +28,3 @@
 [submodule ".vim/pack/files/start/fzf"]
 	path = .vim/pack/files/start/fzf
 	url = git@github.com:junegunn/fzf.vim.git
-[submodule ".vim/pack/powershell/start/vim-ps1"]
-	path = .vim/pack/powershell/start/vim-ps1
-	url = https://github.com/PProvost/vim-ps1.git
-[submodule ".vim/pack/syntax/start/vim-polyglot"]
-	path = .vim/pack/syntax/start/vim-polyglot
-	url = https://github.com/sheerun/vim-polyglot.git
