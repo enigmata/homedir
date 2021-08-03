@@ -36,6 +36,8 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'lervag/vimtex'
+Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""

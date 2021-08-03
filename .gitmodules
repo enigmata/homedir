@@ -10,12 +10,3 @@
 [submodule ".tmux/plugins/tmux-yank"]
 	path = .tmux/plugins/tmux-yank
 	url = https://github.com/tmux-plugins/tmux-yank
-[submodule ".vim/pack/ctags"]
-	path = .vim/pack/ctags
-	url = https://github.com/rwhorman/vim-ctags
-[submodule ".vim/pack/latex/start/vimtex"]
-	path = .vim/pack/latex/start/vimtex
-	url = https://github.com/lervag/vimtex.git
-[submodule ".vim/pack/vim/start/vim-devicons"]
-	path = .vim/pack/vim/start/vim-devicons
-	url = https://github.com/ryanoasis/vim-devicons.git
