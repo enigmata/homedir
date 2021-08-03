@@ -58,12 +58,16 @@ endfunc
 """""""""""""""""""""""""""""""""""""""""
 " Syntax highlighting
 """""""""""""""""""""""""""""""""""""""""
-let python_highlight_all=1
 syntax enable       " syntax highlighting
 filetype on         " detect file types
 filetype plugin on
 filetype indent on  " load filetype-specific indent files
 if &diff | syntax off | endif " Turn syntax highlighting off for diff
+
+"""""""""""""""""""""""""""""""""""""""""
+" vim-python/python-syntax highlighting
+"""""""""""""""""""""""""""""""""""""""""
+let g:python_highlight_all = 1
 
 """""""""""""""""""""""""""""""""""""""""
 " Search
