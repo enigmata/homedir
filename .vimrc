@@ -38,7 +38,6 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'lervag/vimtex'
 Plug 'ryanoasis/vim-devicons'
-Plug 'neovim/nvim-lspconfig'
 call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
