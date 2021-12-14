@@ -181,6 +181,7 @@ nnoremap <leader>p <C-w>p
 """""""""""""""""""""""""""""""""""""""""""""""""
 " Fuzzy search config
 """""""""""""""""""""""""""""""""""""""""""""""""
+set rtp+=/usr/bin
 set rtp+=/usr/local/opt/fzf
 set rtp+=/home/linuxbrew/.linuxbrew/opt/fzf/
 command! -bang -nargs=? -complete=dir Files
