@@ -1,0 +1,36 @@
+- defaults:
+    link:
+        force: true
+- clean: ['~']
+- link:
+    ~/.bash_completion: .bash_completion
+    ~/.bash_login:      .bash_login
+    ~/.bash_logout:     .bash_logout
+    ~/.bashrc:          .bashrc
+    ~/.clang-format:    .clang-format
+    ~/.config/:
+      glob: true
+      create: true
+      path: .config/**
+    ~/.fzf.bash:        .fzf.bash
+    ~/.gitconfig:       .gitconfig
+    ~/.gitmodules:      .gitmodules
+    ~/.terminfo/:
+      glob: true
+      create: true
+      path: .terminfo/**
+    ~/.tmux.conf:       .tmux.conf
+    ~/.vim/:
+      glob: true
+      create: true
+      path: .vim/**
+    ~/.vimrc:           .vimrc
+    ~/profile.ps1:
+        if: '[`uname -o` = Msys]'
+    ~/pyrightconfig.json:
+    ~/mbin/:
+      glob: true
+      create: true
+      path: mbin/**
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
