@@ -20,6 +20,8 @@ else
     export MANPATH=/home/linuxbrew/.linuxbrew/share/man:$MANPATH
     export INFOPATH=/home/linuxbrew/.linuxbrew/share/info:$INFOPATH
 
+    export PATH=$PATH:$HOME/.local/bin
+
     export PATH=$PATH:/usr/local/texlive/2018/bin/x86_64-linux
     export MANPATH=/usr/local/texlive/2018/texmf-dist/doc/man:$MANPATH
     export INFOPATH=/usr/local/texlive/2018/texmf-dist/doc/info:$INFOPATH
