@@ -1,14 +1,18 @@
 """""""""""""""""""""""""""""""""""""""""
 " Basic settings
 """""""""""""""""""""""""""""""""""""""""
+set relativenumber
 set number
 set ruler
+set hidden
 set autoindent
-set nowrap        " plays nicer with relativenumber
-set wildmenu      " visual autocomplete for cmdline
-set laststatus=2  " always display status line
-set cpoptions=$   " put a '$' at end of changed text
-set ts=4 sts=4 sw=4 expandtab " prefer spaces to tab characters
+set signcolumn
+set nowrap
+set wildmenu
+set scrolloff=8
+set laststatus=2
+set cpoptions=$
+set ts=4 sts=4 sw=4 expandtab
 
 let mapleader = ";"
 
@@ -20,7 +24,7 @@ nmap <leader>o :set paste!<CR>:setlocal paste?<CR>
 """""""""""""""""""""""""""""""""""""""""
 " Dealing with white space chars
 """""""""""""""""""""""""""""""""""""""""
-set listchars=tab:▸\ ,eol:¬
+set listchars=tab:▸\ ,eol:¬,trail:·
 nmap <leader>EOL :set list!<CR>
 nnoremap <leader>DEOL <BAR> :%s/\\s\\+$//gc<CR>
 
