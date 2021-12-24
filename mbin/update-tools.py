@@ -17,5 +17,9 @@ requirements_file=Path(os.environ["HOME"])/".config"/"python"/"requirements.txt"
 print(f'\nUPDATE: Python packages ({requirements_file})...\n')
 subprocess.run(["python3", "-m", "pip", "install", "-U", "-r", requirements_file])
 
-print('\nUPDATE: Homebrew ...\n')
-subprocess.run(["brew", "upgrade"])
+print('\nUPDATE: Homebrew ...')
+try:
+    subprocess.run(["brew", "upgrade"])
+except FileNotFoundError:
+    print("Homebrew not installed; skipping ...")
+print("\n")
