@@ -40,6 +40,8 @@ alias df='duf'
 alias tree='br -i'
 alias find='fd -HIl'
 alias top='glances'
+alias ag='ag -f'
+alias rg='rg --follow'
 
 export GIT_EDITOR=nvim
 
