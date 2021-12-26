@@ -1,6 +1,3 @@
-"""""""""""""""""""""""""""""""""""""""""
-" Basic settings
-"""""""""""""""""""""""""""""""""""""""""
 set relativenumber
 set number
 set ruler
@@ -9,12 +6,13 @@ set autoindent
 set signcolumn
 set nowrap
 set wildmenu
+set confirm
 set scrolloff=8
 set laststatus=2
 set cpoptions=$
 set ts=4 sts=4 sw=4 expandtab
 
-let mapleader = ";"
+let mapleader = " "
 
 command! -nargs=* Wrap set wrap linebreak nolist
 nmap <leader>w :setlocal wrap!<CR>:setlocal wrap?<CR>
@@ -80,7 +78,7 @@ let g:python_highlight_all = 1
 :set ignorecase
 :set smartcase
 :set hlsearch
-:nmap <leader>N :nohl<CR>
+:nmap <leader>n :nohl<CR>
 
 """""""""""""""""""""""""""""""""""""""""
 " Compiling helpers
@@ -164,22 +162,22 @@ tnoremap <leader>h <C-\><C-N><C-w>h
 tnoremap <leader>j <C-\><C-N><C-w>j
 tnoremap <leader>k <C-\><C-N><C-w>k
 tnoremap <leader>l <C-\><C-N><C-w>l
-tnoremap <leader>u <C-\><C-N><C-w>t
-tnoremap <leader>n <C-\><C-N><C-w>b
+tnoremap <leader>ul <C-\><C-N><C-w>t
+tnoremap <leader>lr <C-\><C-N><C-w>b
 tnoremap <leader>p <C-\><C-N><C-w>p
 inoremap <leader>h <C-\><C-N><C-w>h
 inoremap <leader>j <C-\><C-N><C-w>j
 inoremap <leader>k <C-\><C-N><C-w>k
 inoremap <leader>l <C-\><C-N><C-w>l
-inoremap <leader>u <C-\><C-N><C-w>t
-inoremap <leader>n <C-\><C-N><C-w>b
+inoremap <leader>ul <C-\><C-N><C-w>t
+inoremap <leader>lr <C-\><C-N><C-w>b
 inoremap <leader>p <C-\><C-N><C-w>p
 nnoremap <leader>h <C-w>h
 nnoremap <leader>j <C-w>j
 nnoremap <leader>k <C-w>k
 nnoremap <leader>l <C-w>l
-nnoremap <leader>u <C-w>t
-nnoremap <leader>n <C-w>b
+nnoremap <leader>ul <C-w>t
+nnoremap <leader>lr <C-w>b
 nnoremap <leader>p <C-w>p
 
 """""""""""""""""""""""""""""""""""""""""""""""""
