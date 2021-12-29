@@ -49,3 +49,9 @@ vim.api.nvim_set_keymap('n', '<leader>ul', '<C-w>t', { noremap = true, silent = 
 vim.api.nvim_set_keymap('n', '<leader>lr', '<C-w>b', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>p', '<C-w>p', { noremap = true, silent = true })
 
+vim.cmd('hi! vimStatuslineBufInfo ctermbg=2 ctermfg=0')
+vim.cmd('hi! vimStatuslineBufInfoSep ctermbg=4 ctermfg=2')
+vim.cmd('hi! vimStatuslineFileInfo ctermbg=4 ctermfg=0')
+vim.cmd('hi! vimStatuslineFileInfoSep ctermbg=0 ctermfg=4')
+vim.cmd('hi! vimStatuslineCenter ctermbg=0 ctermfg=11')
+vim.opt.statusline = '%#vimStatuslineBufInfo#Buffer=%n %#vimStatuslineBufInfoSep#%#vimStatuslineFileInfo# %t%r%m%h %#vimStatuslineFileInfoSep#%#vimStatuslineCenter# %f%=%#vimStatuslineFileinfoSep#%#vimStatuslineFileInfo# %y%q %#vimStatuslineBufInfoSep#%#vimStatuslineBufInfo# col=%c,line=%l/%L(%p%%) '
