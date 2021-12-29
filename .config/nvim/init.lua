@@ -55,3 +55,5 @@ vim.cmd('hi! vimStatuslineFileInfo ctermbg=4 ctermfg=0')
 vim.cmd('hi! vimStatuslineFileInfoSep ctermbg=0 ctermfg=4')
 vim.cmd('hi! vimStatuslineCenter ctermbg=0 ctermfg=11')
 vim.opt.statusline = '%#vimStatuslineBufInfo#Buffer=%n %#vimStatuslineBufInfoSep#%#vimStatuslineFileInfo# %t%r%m%h %#vimStatuslineFileInfoSep#%#vimStatuslineCenter# %f%=%#vimStatuslineFileinfoSep#%#vimStatuslineFileInfo# %y%q %#vimStatuslineBufInfoSep#%#vimStatuslineBufInfo# col=%c,line=%l/%L(%p%%) '
+
+vim.cmd('filetype plugin on')
