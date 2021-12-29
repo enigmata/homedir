@@ -78,7 +78,7 @@ let g:python_highlight_all = 1
 :set ignorecase
 :set smartcase
 :set hlsearch
-:nmap <leader>n :nohl<CR>
+:nmap <leader>n :nohl<cr>
 
 """""""""""""""""""""""""""""""""""""""""
 " Compiling helpers
@@ -165,13 +165,6 @@ tnoremap <leader>l <C-\><C-N><C-w>l
 tnoremap <leader>ul <C-\><C-N><C-w>t
 tnoremap <leader>lr <C-\><C-N><C-w>b
 tnoremap <leader>p <C-\><C-N><C-w>p
-inoremap <leader>h <C-\><C-N><C-w>h
-inoremap <leader>j <C-\><C-N><C-w>j
-inoremap <leader>k <C-\><C-N><C-w>k
-inoremap <leader>l <C-\><C-N><C-w>l
-inoremap <leader>ul <C-\><C-N><C-w>t
-inoremap <leader>lr <C-\><C-N><C-w>b
-inoremap <leader>p <C-\><C-N><C-w>p
 nnoremap <leader>h <C-w>h
 nnoremap <leader>j <C-w>j
 nnoremap <leader>k <C-w>k
