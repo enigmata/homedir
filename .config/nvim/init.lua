@@ -59,4 +59,4 @@ vim.opt.statusline = '%#vimStatuslineBufInfo#Buffer=%n %#vimStatuslineBufInfoSep
 vim.cmd('filetype plugin on')
 
 require('plugins')
-
+require('treesitter')
