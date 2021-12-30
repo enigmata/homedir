@@ -21,6 +21,7 @@ vim.opt.incsearch=true
 vim.opt.ignorecase=true
 vim.opt.smartcase=true
 vim.opt.hlsearch=true
+vim.opt.mouse="a"
 
 vim.cmd('colorscheme solarized')
 
