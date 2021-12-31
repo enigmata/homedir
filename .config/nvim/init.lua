@@ -60,3 +60,4 @@ vim.cmd('filetype plugin on')
 
 require('plugins')
 require('treesitter')
+require('tree')
