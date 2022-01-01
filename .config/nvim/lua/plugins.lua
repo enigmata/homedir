@@ -21,5 +21,6 @@ return packer.startup(function()
   use { 'nvim-treesitter/nvim-treesitter', run=':TSUpdate' }
   use 'kyazdani42/nvim-tree.lua'
   use 'kyazdani42/nvim-web-devicons'
+  use 'neovim/nvim-lspconfig'
 end)
 
