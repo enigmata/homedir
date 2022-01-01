@@ -42,6 +42,7 @@ alias find='fd -HIl'
 alias top='glances'
 alias ag='ag -f'
 alias rg='rg --follow'
+alias vim='nvim'
 
 export GIT_EDITOR=nvim
 
