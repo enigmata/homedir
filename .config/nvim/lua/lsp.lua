@@ -30,8 +30,11 @@ local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
+local lsp_client_capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
 lspcfg.sumneko_lua.setup {
   on_attach=on_attach,
+  capabilities = lsp_client_capabilities,
   flags={
     debounce_text_changes=150,
   },
@@ -42,7 +45,6 @@ lspcfg.sumneko_lua.setup {
         path=runtime_path,
       },
       diagnostics={
-        -- Get the language server to recognize the `vim` global
         globals={'vim'},
       },
       workspace={

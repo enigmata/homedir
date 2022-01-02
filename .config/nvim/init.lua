@@ -59,7 +59,8 @@ vim.opt.statusline = '%#vimStatuslineBufInfo#Buffer=%n %#vimStatuslineBufInfoSep
 
 vim.cmd('filetype plugin on')
 
-require('lua/plugins')
-require('lua/treesitter')
-require('lua/tree')
-require('lua/lsp')
+require('plugins')
+require('treesitter')
+require('tree')
+require('lsp')
+require('completion')

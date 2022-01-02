@@ -17,10 +17,18 @@ packer.init {
 }
 
 return packer.startup(function()
+  local use=packer.use
   use 'wbthomason/packer.nvim'
   use { 'nvim-treesitter/nvim-treesitter', run=':TSUpdate' }
   use 'kyazdani42/nvim-tree.lua'
   use 'kyazdani42/nvim-web-devicons'
   use 'neovim/nvim-lspconfig'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-cmdline'
+  use 'hrsh7th/nvim-cmp'
+  use 'L3MON4D3/LuaSnip'
+  use 'saadparwaiz1/cmp_luasnip'
 end)
 
