@@ -10,7 +10,7 @@ vim.opt.confirm=true
 vim.opt.scrolloff=8
 vim.opt.laststatus=2
 vim.opt.cpoptions='$'
-vim.opt.ts=4 
+vim.opt.ts=4
 vim.opt.sts=4
 vim.opt.sw=4
 vim.opt.expandtab=true
@@ -59,7 +59,7 @@ vim.opt.statusline = '%#vimStatuslineBufInfo#Buffer=%n %#vimStatuslineBufInfoSep
 
 vim.cmd('filetype plugin on')
 
-require('plugins')
-require('treesitter')
-require('tree')
-require('lsp')
+require('lua/plugins')
+require('lua/treesitter')
+require('lua/tree')
+require('lua/lsp')
