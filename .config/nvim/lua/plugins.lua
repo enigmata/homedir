@@ -19,7 +19,7 @@ packer.init {
 return packer.startup(function()
   local use=packer.use
   use 'wbthomason/packer.nvim'
-  use { 'nvim-treesitter/nvim-treesitter', run=':TSUpdate' }
+  use {'nvim-treesitter/nvim-treesitter', run=':TSUpdate'}
   use 'kyazdani42/nvim-tree.lua'
   use 'kyazdani42/nvim-web-devicons'
   use 'neovim/nvim-lspconfig'
@@ -31,5 +31,7 @@ return packer.startup(function()
   use 'hrsh7th/cmp-cmdline'
   use 'L3MON4D3/LuaSnip'
   use 'saadparwaiz1/cmp_luasnip'
+  use {'nvim-telescope/telescope.nvim', requires={{'nvim-lua/plenary.nvim'}}
+}
 end)
 
