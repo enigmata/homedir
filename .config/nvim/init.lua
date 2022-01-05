@@ -28,6 +28,7 @@ vim.cmd('colorscheme solarized')
 vim.g.mapleader = " "
 
 local opts = { noremap=true, silent=true }
+vim.api.nvim_set_keymap('n', '<leader>qq', ':qa<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>eol', ':set list!<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>deol', ':%s/\\\\s\\\\+$//gc<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>n', ':nohl<CR>', opts)
@@ -65,3 +66,4 @@ require('tree')
 require('lsp')
 require('completion')
 require('telescope')
+require('buffers')

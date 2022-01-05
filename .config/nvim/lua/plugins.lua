@@ -19,10 +19,10 @@ packer.init {
 return packer.startup(function()
   local use=packer.use
   use 'nvim-lua/plenary.nvim'
+  use 'kyazdani42/nvim-web-devicons'
   use 'wbthomason/packer.nvim'
   use {'nvim-treesitter/nvim-treesitter', run=':TSUpdate'}
   use 'kyazdani42/nvim-tree.lua'
-  use 'kyazdani42/nvim-web-devicons'
   use 'neovim/nvim-lspconfig'
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-nvim-lsp'
@@ -35,5 +35,6 @@ return packer.startup(function()
   use 'nvim-telescope/telescope.nvim'
   use {'famiu/bufdelete.nvim',
             config="vim.api.nvim_set_keymap('n', '<leader>bd', ':Bdelete<CR>',{noremap=true, silent=true})"}
+  use 'akinsho/bufferline.nvim'
 end)
 
