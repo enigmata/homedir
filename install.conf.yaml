@@ -3,35 +3,60 @@
         force: true
 - clean: ['~']
 - link:
-    ~/.bash_completion: .bash_completion
-    ~/.bash_login:      .bash_login
-    ~/.bash_logout:     .bash_logout
-    ~/.bashrc:          .bashrc
-    ~/.clang-format:    .clang-format
+    ~/.bash_completion:
+        if: '[ `uname` = Linux ]'
+        path: .bash_completion
+    ~/.bash_login:
+        if: '[ `uname` = Linux ]'
+        path: .bash_login
+    ~/.bash_logout:
+        if: '[ `uname` = Linux ]'
+        path: .bash_logout
+    ~/.bashrc:
+        if: '[ `uname` = Linux ]'
+        path: .bash_rc
+    ~/.clang-format: .clang-format
     ~/.config/:
-      glob: true
-      create: true
-      path: .config/**
-    ~/.fzf.bash:        .fzf.bash
-    ~/.gitconfig:       .gitconfig
-    ~/.gitmodules:      .gitmodules
+        glob: true
+        create: true
+        path: .config/**
+    ~/.fzf.bash:   .fzf.bash
+    ~/.gitconfig:  .gitconfig
+    ~/.gitmodules: .gitmodules
     ~/.terminfo/:
-      glob: true
-      create: true
-      path: .terminfo/**
-    ~/.tmux.conf:       .tmux.conf
+        if: '[ `uname` = Linux ]'
+        glob: true
+        create: true
+        path: .terminfo/**
+    ~/.tmux.conf:
+        if: '[ `uname` = Linux ]'
+        path: .tmux.conf
     ~/.vim/:
-      glob: true
-      create: true
-      path: .vim/**
-    ~/.vimrc:           .vimrc
-    ~/profile.ps1:
-        if: '[`uname -o` = Msys]'
+        if: '[ `uname` = Linux ]'
+        glob: true
+        create: true
+        path: .vim/**
+    ~/vimfiles:
+        if: 'pwsh.exe -version'
+        create: true
+        path: .vim
+    ~/.vimrc:
+        if: '[ `uname` = Linux ]'
+        path: .vimrc
+    ~/_vimrc:
+        if: 'pwsh.exe -version'
+        path: .vimrc
     ~/pyrightconfig.json:
-    ~/mbin/:
-      glob: true
+    ~/mbin:
       create: true
-      path: mbin/**
+      path: mbin
+    ~/Documents/PowerShell/profile.ps1:
+        if: 'pwsh.exe -version'
+        path: profile.ps1
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
-    - [git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim]
+    - [install-nvim-packer.py]
+- link:
+    ~/AppData/Local/nvim-data/site/pack/packer/start/packer.nvim:
+        if: 'pwsh.exe -version'
+        path: ~/.local/share/nvim/site/pack/packer/start/packer.nvim
