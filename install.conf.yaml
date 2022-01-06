@@ -14,7 +14,7 @@
         path: .bash_logout
     ~/.bashrc:
         if: '[ `uname` = Linux ]'
-        path: .bash_rc
+        path: .bashrc
     ~/.clang-format: .clang-format
     ~/.config/:
         glob: true
