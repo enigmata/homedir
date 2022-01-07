@@ -21,6 +21,7 @@ return packer.startup(function()
   use 'nvim-lua/plenary.nvim'
   use 'kyazdani42/nvim-web-devicons'
   use 'wbthomason/packer.nvim'
+  use 'EdenEast/nightfox.nvim'
   use {'nvim-treesitter/nvim-treesitter', run=':TSUpdate'}
   use 'kyazdani42/nvim-tree.lua'
   use 'neovim/nvim-lspconfig'

@@ -22,6 +22,7 @@ vim.opt.ignorecase=true
 vim.opt.smartcase=true
 vim.opt.hlsearch=true
 vim.opt.mouse="a"
+vim.opt.termguicolors=true
 
 vim.cmd('colorscheme solarized')
 
@@ -67,3 +68,4 @@ require('lsp')
 require('completion')
 require('telescope')
 require('buffers')
+require('nightfox').load("nordfox")
