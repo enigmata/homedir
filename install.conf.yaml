@@ -16,10 +16,9 @@
         if: '[ `uname` = Linux ]'
         path: .bashrc
     ~/.clang-format: .clang-format
-    ~/.config/:
-        glob: true
+    ~/.config:
         create: true
-        path: .config/**
+        path: .config
     ~/.fzf.bash:   .fzf.bash
     ~/.gitconfig:  .gitconfig
     ~/.gitmodules: .gitmodules
@@ -48,15 +47,16 @@
         path: .vimrc
     ~/pyrightconfig.json:
     ~/mbin:
-      create: true
-      path: mbin
+        create: true
+        path: mbin
     ~/Documents/PowerShell/profile.ps1:
         if: 'pwsh.exe -version'
         path: profile.ps1
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
-    - [install-nvim-packer.py]
+    - [python mbin/install-nvim-packer.py]
 - link:
     ~/AppData/Local/nvim-data/site/pack/packer/start/packer.nvim:
         if: 'pwsh.exe -version'
+        create: true
         path: ~/.local/share/nvim/site/pack/packer/start/packer.nvim
