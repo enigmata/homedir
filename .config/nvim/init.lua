@@ -24,8 +24,6 @@ vim.opt.hlsearch=true
 vim.opt.mouse="a"
 vim.opt.termguicolors=true
 
-vim.cmd('colorscheme solarized')
-
 vim.g.mapleader = " "
 
 local opts = { noremap=true, silent=true }
@@ -52,13 +50,6 @@ vim.api.nvim_set_keymap('n', '<leader>ul', '<C-w>t', opts)
 vim.api.nvim_set_keymap('n', '<leader>lr', '<C-w>b', opts)
 vim.api.nvim_set_keymap('n', '<leader>p', '<C-w>p', opts)
 
-vim.cmd('hi! vimStatuslineBufInfo ctermbg=2 ctermfg=0')
-vim.cmd('hi! vimStatuslineBufInfoSep ctermbg=4 ctermfg=2')
-vim.cmd('hi! vimStatuslineFileInfo ctermbg=4 ctermfg=0')
-vim.cmd('hi! vimStatuslineFileInfoSep ctermbg=0 ctermfg=4')
-vim.cmd('hi! vimStatuslineCenter ctermbg=0 ctermfg=11')
-vim.opt.statusline = '%#vimStatuslineBufInfo#Buffer=%n %#vimStatuslineBufInfoSep#%#vimStatuslineFileInfo# %t%r%m%h %#vimStatuslineFileInfoSep#%#vimStatuslineCenter# %f%=%#vimStatuslineFileinfoSep#%#vimStatuslineFileInfo# %y%q %#vimStatuslineBufInfoSep#%#vimStatuslineBufInfo# col=%c,line=%l/%L(%p%%) '
-
 vim.cmd('filetype plugin on')
 
 require('plugins')
@@ -69,3 +60,4 @@ require('completion')
 require('telescope')
 require('buffers')
 require('nightfox').load("nordfox")
+require('lualine').setup()
