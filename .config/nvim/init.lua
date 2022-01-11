@@ -24,32 +24,6 @@ vim.opt.hlsearch=true
 vim.opt.mouse="a"
 vim.opt.termguicolors=true
 
-vim.g.mapleader = " "
-
-local opts = { noremap=true, silent=true }
-vim.api.nvim_set_keymap('n', '<leader>qq', ':qa<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>eol', ':set list!<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>deol', ':%s/\\\\s\\\\+$//gc<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>n', ':nohl<CR>', opts)
-vim.api.nvim_set_keymap('', '<C-n>', ':cnext<CR>', opts)
-vim.api.nvim_set_keymap('', '<C-m>', ':cprevious<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>c', ':cclose<CR>', opts)
-
-vim.api.nvim_set_keymap('t', '<leader>h', '<C-\\><C-N><C-w>h', opts)
-vim.api.nvim_set_keymap('t', '<leader>j', '<C-\\><C-N><C-w>j', opts)
-vim.api.nvim_set_keymap('t', '<leader>k', '<C-\\><C-N><C-w>k', opts)
-vim.api.nvim_set_keymap('t', '<leader>l', '<C-\\><C-N><C-w>l', opts)
-vim.api.nvim_set_keymap('t', '<leader>ul', '<C-\\><C-N><C-w>t', opts)
-vim.api.nvim_set_keymap('t', '<leader>lr', '<C-\\><C-N><C-w>b', opts)
-vim.api.nvim_set_keymap('t', '<leader>p', '<C-\\><C-N><C-w>p', opts)
-vim.api.nvim_set_keymap('n', '<leader>h', '<C-w>h', opts)
-vim.api.nvim_set_keymap('n', '<leader>j', '<C-w>j', opts)
-vim.api.nvim_set_keymap('n', '<leader>k', '<C-w>k', opts)
-vim.api.nvim_set_keymap('n', '<leader>l', '<C-w>l', opts)
-vim.api.nvim_set_keymap('n', '<leader>ul', '<C-w>t', opts)
-vim.api.nvim_set_keymap('n', '<leader>lr', '<C-w>b', opts)
-vim.api.nvim_set_keymap('n', '<leader>p', '<C-w>p', opts)
-
 vim.cmd('filetype plugin on')
 
 require('plugins')
@@ -61,3 +35,4 @@ require('telescope')
 require('buffers')
 require('nightfox').load("nordfox")
 require('lualine').setup()
+require('keymaps')

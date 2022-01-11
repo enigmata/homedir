@@ -38,5 +38,6 @@ return packer.startup(function()
             config="vim.api.nvim_set_keymap('n', '<leader>bd', ':Bdelete<CR>',{noremap=true, silent=true})"}
   use 'akinsho/bufferline.nvim'
   use 'nvim-lualine/lualine.nvim'
+  use 'folke/which-key.nvim'
 end)
 

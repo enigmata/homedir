@@ -1,10 +1,3 @@
-local opts = { noremap=true, silent=true }
-vim.api.nvim_set_keymap('n', '<leader>an', ':BufferLineCycleNext<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>ap', ':BufferLineCyclePrev<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>amn', ':BufferLineMoveNext<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>amp', ':BufferLineMovePrev<CR>', opts)
-vim.api.nvim_set_keymap('n', '<leader>bd', ':Bdelete<CR>', opts)
-
 require('bufferline').setup{
   options={
     numbers='None',
