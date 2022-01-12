@@ -4,9 +4,6 @@ from pathlib import Path
 import os
 import subprocess
 
-print('\nUPDATE: Submodules...\n')
-subprocess.run(["git-submodule-update.py"])
-
 print('\nUPDATE: npm packages...\n')
 subprocess.run(["sudo","npm","-g","update"])
 
