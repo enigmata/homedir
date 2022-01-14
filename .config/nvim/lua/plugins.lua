@@ -34,8 +34,8 @@ return packer.startup(function()
   use 'L3MON4D3/LuaSnip'
   use 'saadparwaiz1/cmp_luasnip'
   use 'nvim-telescope/telescope.nvim'
-  use {'famiu/bufdelete.nvim',
-            config="vim.api.nvim_set_keymap('n', '<leader>bd', ':Bdelete<CR>',{noremap=true, silent=true})"}
+  use {'nvim-telescope/telescope-fzf-native.nvim', run='make'}
+  use 'famiu/bufdelete.nvim'
   use 'akinsho/bufferline.nvim'
   use 'nvim-lualine/lualine.nvim'
   use 'folke/which-key.nvim'
