@@ -36,13 +36,30 @@ wk.register({
       d={"<cmd>Bdelete<cr>", "Buffer delete"},
     },
     f={
-      name="file",
-      b={"<cmd>Telescope buffers<cr>", "Search buffers"},
-      e={"<cmd>NvimTreeToggle<cr>", "File explorer"},
-      f={"<cmd>Telescope find_files<cr>", "Find file"},
-      g={"<cmd>Telescope live_grep<cr>", "Grep live"},
-      h={"<cmd>Telescope help_tags<cr>", "Search help"},
-      n={"<cmd>enew<cr>", "New file"},
+      name="find",
+      b={
+        name="buffers",
+        b={"<cmd>Telescope buffers<cr>", "Search buffers"},
+        f={"<cmd>Telescope current_buffer_fuzzy_find<cr>", "Search buffer contents"},
+      },
+      f={
+        name="files",
+        e={"<cmd>NvimTreeToggle<cr>", "Find files in explorer"},
+        f={"<cmd>Telescope find_files<cr>", "Find file"},
+        g={"<cmd>Telescope live_grep<cr>", "Grep files live"},
+      },
+      g={
+        name="git",
+        c={"<cmd>Telescope git_commits<cr>", "Search git commits with diff"},
+        f={"<cmd>Telescope git_files<cr>", "Search git ls-files"},
+        s={"<cmd>Telescope git_status<cr>", "Search git status"},
+      },
+      v={
+        name="vim",
+        c={"<cmd>Telescope command_history<cr>", "Find in command history"},
+        h={"<cmd>Telescope help_tags<cr>", "Search help"},
+        s={"<cmd>Telescope search_history<cr>", "Find in search history"},
+      },
     },
     t={
       name="text",
