@@ -10,9 +10,6 @@ vim.opt.confirm=true
 vim.opt.scrolloff=8
 vim.opt.laststatus=2
 vim.opt.cpoptions='$'
-vim.opt.ts=4
-vim.opt.sts=4
-vim.opt.sw=4
 vim.opt.expandtab=true
 vim.opt.listchars={tab = '▸ ', eol = '¬', trail = '·'}
 vim.opt.background='dark'
