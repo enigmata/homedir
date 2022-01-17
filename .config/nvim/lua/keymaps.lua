@@ -68,10 +68,7 @@ wk.register({
         s={"<cmd>set list!<cr>", "Show whitespace"},
         d={"<cmd>%s/\\\\s\\\\+$//gc<CR>", "Delete WS to EOL"},
       },
-      m={
-        name="match",
-        j={"%", "Jump to matching pair"},
-      },
+      j={"%", "Jump to matching pair"},
     },
     L={
       name="lsp",
