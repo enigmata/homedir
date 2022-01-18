@@ -40,5 +40,6 @@ return packer.startup(function()
   use 'akinsho/bufferline.nvim'
   use 'nvim-lualine/lualine.nvim'
   use 'folke/which-key.nvim'
+  use {'numToStr/Comment.nvim', config=function() require('Comment').setup() end}
 end)
 
