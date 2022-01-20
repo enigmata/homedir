@@ -41,5 +41,6 @@ return packer.startup(function()
   use 'nvim-lualine/lualine.nvim'
   use 'folke/which-key.nvim'
   use {'numToStr/Comment.nvim', config=function() require('Comment').setup() end}
+  use 'jose-elias-alvarez/null-ls.nvim'
 end)
 

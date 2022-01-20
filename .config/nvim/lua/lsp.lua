@@ -1,4 +1,5 @@
 local lspcfg=require('lspconfig')
+local null_ls=require('null-ls')
 
 local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
@@ -34,3 +35,15 @@ lspcfg.sumneko_lua.setup {
     },
   },
 }
+
+null_ls.setup({
+  sources={
+    null_ls.builtins.formatting.stylua.with({
+        extra_args = { "--config-path", vim.fn.expand("~/.config/lua/stylua.toml") },
+    }),
+    null_ls.builtins.formatting.gofmt,
+    null_ls.builtins.formatting.black,
+    null_ls.builtins.formatting.rustfmt,
+    null_ls.builtins.formatting.shfmt,
+  },
+})
