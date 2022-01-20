@@ -43,6 +43,7 @@ alias top='glances'
 alias ag='ag -f'
 alias rg='rg --follow'
 alias vim='nvim'
+alias tg='tmux-go.py'
 
 export GIT_EDITOR=nvim
 
