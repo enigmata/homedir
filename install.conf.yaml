@@ -51,6 +51,10 @@
     ~/Documents/PowerShell/profile.ps1:
         if: 'pwsh.exe -version'
         path: profile.ps1
+    ~/AppData/Roaming/alacritty/alacritty.yml:
+        if: 'pwsh.exe -version'
+        create: true
+        path: .config/winterminal/alacritty.yml
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
     - [python mbin/install-nvim-packer.py]
