@@ -7,14 +7,16 @@ wk.setup{}
 wk.register({
   ["<leader>q"]={"<cmd>qa<cr>", "Quit all"},
   ["<leader>Q"]={"<cmd>cclose<cr>", "Close QuickFix List"},
-  ["<leader>n"]={"<cmd>nohl<cr>", "Remove highlight"},
+  ["<leader>H"]={"<cmd>nohl<cr>", "Remove highlight"},
   ["<leader>j"]={"<C-w>j", "Window nav down"},
   ["<leader>k"]={"<C-w>k", "Window nav up"},
   ["<leader>l"]={"<C-w>l", "Window nav right"},
   ["<leader>h"]={"<C-w>h", "Window nav left"},
   ["<leader>u"]={"<C-w>t", "Window nav upper left"},
   ["<leader>r"]={"<C-w>b", "Window nav lower right"},
-  ["<leader>p"]={"<C-w>p", "Window nav previous"},
+  ["<leader>n"]={"<cmd>BufferLineCycleNext<cr>", "Next buffer"},
+  ["<leader>p"]={"<cmd>BufferLineCyclePrev<cr>", "Previous buffer"},
+  ["<leader>e"]={"<cmd>NvimTreeToggle<cr>", "File explorer tree"},
 }, { mode="n" })
 
 wk.register({
@@ -44,7 +46,6 @@ wk.register({
       },
       f={
         name="files",
-        e={"<cmd>NvimTreeToggle<cr>", "Find files in explorer"},
         f={"<cmd>Telescope find_files<cr>", "Find file"},
         g={"<cmd>Telescope live_grep<cr>", "Grep files live"},
       },
