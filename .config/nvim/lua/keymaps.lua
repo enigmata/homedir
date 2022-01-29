@@ -44,6 +44,7 @@ wk.register({
         b={"<cmd>Telescope buffers<cr>", "Search buffers"},
         f={"<cmd>Telescope current_buffer_fuzzy_find<cr>", "Search buffer contents"},
       },
+      d={"<cmd>Telescope diagnostics<cr>", "List diagnostics"},
       f={
         name="files",
         f={"<cmd>Telescope find_files<cr>", "Find file"},
