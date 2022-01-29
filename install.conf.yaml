@@ -41,6 +41,9 @@
     ~/.vimrc:
         if: '[ `uname` = Linux ]'
         path: .vimrc
+    ~/.zshrc:
+        if: '[ `uname` = Linux ]'
+        path: .zshrc
     ~/_vimrc:
         if: 'pwsh.exe -version'
         path: .vimrc
