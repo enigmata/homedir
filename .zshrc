@@ -56,21 +56,8 @@ export EDITOR=nvim
 export GOPATH=$HOME
 export GOBIN=~/bin
 
-setopt promptsubst
-autoload -Uz vcs_info colors
-precmd () { vcs_info }
+autoload -Uz colors
 
-zstyle ':vcs_info:*' enable git
-zstyle ':vcs_info:*' get-revision true
-zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:*' stagedstr '✚'
-zstyle ':vcs_info:*' unstagedstr '±'
-zstyle ':vcs_info:*' actionformats '%K{black}%F{green}%K{green}%F{black}%s-%b%K{black}%F{green}%f%k '
-zstyle ':vcs_info:*' formats '%K{black}%F{green}%K{green}%F{black}%s-%b%K{black}%F{green}%f%k '
-#zstyle ':vcs_info:*' actionformats ' %u%c'
-#zstyle ':vcs_info:*' formats ' %u%c'
-#zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{3}%r'
-
-PS1='%K{green}%F{black}%n@%m%F{green}%K{blue}%F{black}%K{blue} %~ %F{blue}%K{black}%f%k${vcs_info_msg_0_}%f%k'$'\n''$ '
+PS1='%K{green}%F{black}%n@%m%F{green}%K{blue}%F{black}%K{blue} %~ %F{blue}%K{black}%f%k'$'\n''$ '
 
 . ~/.private
