@@ -4,33 +4,37 @@
 - clean: ['~']
 - link:
     ~/.bash_completion:
-        if: '[ `uname` = Linux ]'
+        if: '[ `uname` = Linux -o `uname` = Darwin ]'
         path: .bash_completion
     ~/.bash_login:
-        if: '[ `uname` = Linux ]'
+        if: '[ `uname` = Linux -o `uname` = Darwin ]'
         path: .bash_login
     ~/.bash_logout:
-        if: '[ `uname` = Linux ]'
+        if: '[ `uname` = Linux -o `uname` = Darwin ]'
         path: .bash_logout
     ~/.bashrc:
-        if: '[ `uname` = Linux ]'
+        if: '[ `uname` = Linux -o `uname` = Darwin ]'
         path: .bashrc
     ~/.clang-format: .clang-format
     ~/.config:
         create: true
         path: .config
     ~/.fzf.bash:   .fzf.bash
+    ~/.fzf.zsh:    .fzf.zsh
     ~/.gitconfig:  .gitconfig
     ~/.terminfo/:
-        if: '[ `uname` = Linux ]'
+        if: '[ `uname` = Linux -o `uname` = Darwin ]'
         glob: true
         create: true
         path: .terminfo/**
     ~/.tmux.conf:
-        if: '[ `uname` = Linux ]'
+        if: '[ `uname` = Linux -o `uname` = Darwin ]'
         path: .tmux.conf
+    ~/.tmux:
+        create: true
+        path: .tmux
     ~/.vim/:
-        if: '[ `uname` = Linux ]'
+        if: '[ `uname` = Linux -o `uname` = Darwin ]'
         glob: true
         create: true
         path: .vim/**
@@ -39,10 +43,10 @@
         create: true
         path: .vim
     ~/.vimrc:
-        if: '[ `uname` = Linux ]'
+        if: '[ `uname` = Linux -o `uname` = Darwin ]'
         path: .vimrc
     ~/.zshrc:
-        if: '[ `uname` = Linux ]'
+        if: '[ `uname` = Linux -o `uname` = Darwin ]'
         path: .zshrc
     ~/_vimrc:
         if: 'pwsh.exe -version'
