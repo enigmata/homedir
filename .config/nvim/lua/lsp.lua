@@ -1,7 +1,7 @@
 local lspcfg=require('lspconfig')
 local null_ls=require('null-ls')
 
-local on_attach = function(_, bufnr)
+local on_attach=function(_, bufnr)
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 end
 
@@ -35,6 +35,28 @@ lspcfg.sumneko_lua.setup {
     },
   },
 }
+
+local on_attach_rust=function(client)
+  require('nvim-cmp').on_attach(client)
+end
+
+lspcfg.rust_analyzer.setup({
+  on_attach=on_attach,
+  settings={
+    ["rust-analyzer"]={
+      assist={
+        importGranularity="module",
+        importPrefix="by_self",
+      },
+      cargo={
+        loadOutDirsFromCheck=true
+      },
+      procMacro={
+        enable=true
+      },
+    }
+  }
+})
 
 null_ls.setup({
   sources={
