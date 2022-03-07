@@ -15,7 +15,7 @@ args = clp.parse_args()
 
 site = urllib.request.Request(args.url)
 web_page = urllib.request.urlopen(site).read()
-soup = bsoup.BeautifulSoup(web_page,'lxml')
+soup = bsoup.BeautifulSoup(web_page,'html.parser')
 print(soup.title.string)
 for anchor in soup.find_all('a'):
     href = str(anchor.get('href'))
@@ -23,7 +23,7 @@ for anchor in soup.find_all('a'):
         if href.startswith('http'):
             pdf_url = href
         else:
-            pdf_url = site.type + '://' + site.host + href
+            pdf_url = args.url + '/' + href
         print(f'downloading {pdf_url} ...')
         if not args.dryrun:
             with urllib.request.urlopen(pdf_url) as pdf_href:
