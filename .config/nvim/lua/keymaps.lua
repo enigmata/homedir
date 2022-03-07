@@ -30,10 +30,6 @@ wk.register({
 }, { mode="t" })
 
 wk.register({
-  ["<leader><space>"]={ "<esc>", "Exit insert mode"},
-}, { mode="i" })
-
-wk.register({
   ["<leader>"]={
     b={
       name="buffer",
