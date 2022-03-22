@@ -63,3 +63,5 @@ PS1='%K{green}%F{black}%n@%m%F{green}%K{blue}%F{black}%K{blue} %~ %F{blue}%K{
 . ~/.private
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+source /Users/randy/.config/broot/launcher/bash/br
