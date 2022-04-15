@@ -6,7 +6,7 @@ import subprocess
 import sys
 
 brew_tap_install_cmd = ["brew","install"]
-tap_install_list = ['bash','bat','broot','cheat','cmake','cppman','dasel','dos2unix','duf','dust','exa','fd','fontconfig','fzf','gcc','git','git-delta','git-filter-repo','glances','go','gotop','httpie','hyperfine','llvm','neovim','neofetch','nnn','node','pkg-config','python@3.9','rg','rlwrap','rust-analyzer','ssh-copy-id','the_silver_searcher','tmux','vim','wget']
+tap_install_list = ['bash','bat','bottom','broot','btop','cheat','cmake','cppman','dasel','difftastic','dog','dos2unix','duf','dust','exa','fd','fennel','fontconfig','fzf','gcc','git','git-delta','git-filter-repo','glances','go','gotop','httpie','hyperfine','hexyl','llvm','neovim','neofetch','nnn','node','pkg-config','python@3.9','rg','rlwrap','rust-analyzer','sd','ssh-copy-id','the_silver_searcher','tmux','vim','wget']
 
 clp = argparse.ArgumentParser(prog='install-brew',
                               description='Install default set of homebrew taps/casks')

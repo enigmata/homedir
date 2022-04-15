@@ -33,6 +33,8 @@ alias ag='ag -f'
 alias rg='rg --follow'
 alias vim='nvim'
 alias tg='tmux-go.py'
+alias sed='sd'
+alias diff='difft'
 
 OLDPATH=$PATH
 export PATH=$HOME/mbin:$HOME/bin
