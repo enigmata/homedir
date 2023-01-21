@@ -9,7 +9,7 @@ local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
-local lsp_client_capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local lsp_client_capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 lspcfg.sumneko_lua.setup {
   on_attach=on_attach,
