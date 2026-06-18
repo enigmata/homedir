@@ -67,7 +67,7 @@ autoload -Uz colors
 
 PS1='%K{green}%F{black}%n@%m%F{green}%K{blue}%F{black}%K{blue} %~ %F{blue}%K{black}%f%k'$'\n''$ '
 
-. ~/.private
+[ -f ~/.private ] && . ~/.private
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

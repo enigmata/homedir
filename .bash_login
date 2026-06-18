@@ -2,7 +2,7 @@
 
 # .bash_login is sourced first upon interactive shell login
 
-. ~/.private
+[ -f ~/.private ] && . ~/.private
 
 OLDPATH=$PATH
 export PATH=$HOME/mbin:$HOME/bin
