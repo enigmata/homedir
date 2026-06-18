@@ -4,6 +4,21 @@ Personal dotfiles managed with [dotbot](https://github.com/anishathalye/dotbot).
 
 ## Install
 
+**Prerequisites (macOS):**
+
+```bash
+# 1. Xcode Command Line Tools (provides git and python3)
+xcode-select --install
+
+# 2. Homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# 3. Core tools used by the shell configs themselves
+brew install neovim eza bat fd broot sd diffutils dust duf glances fzf git-delta tmux ripgrep the_silver_searcher lua-language-server stylua rust-analyzer shfmt
+```
+
+**Then clone and link:**
+
 ```bash
 git clone --recursive git@github.com:enigmata/homedir.git
 cd homedir
@@ -24,20 +39,13 @@ cd homedir
 | Git | `.gitconfig` |
 | Scripts | `mbin/` → `~/mbin/` (on `$PATH`) |
 
-## Dependencies
-
-CLI tools expected to be installed (via Homebrew on macOS):
-
-`nvim` `eza` `bat` `fd` `broot` `sd` `difftastic` `dust` `duf` `glances` `fzf` `delta` `tmux` `ripgrep` `the_silver_searcher`
-
-Neovim LSP servers: `lua-language-server` (lua_ls), `rust-analyzer`  
-Neovim formatters (via null-ls): `stylua` `gofmt` `black` `rustfmt` `shfmt`
-
-Update everything at once:
+## Keeping tools updated
 
 ```bash
 python mbin/update-tools.py
 ```
+
+Updates Homebrew, npm globals, Rust toolchain, and Python packages in one shot.
 
 ## Neovim
 
