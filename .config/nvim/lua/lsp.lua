@@ -11,7 +11,7 @@ table.insert(runtime_path, "lua/?/init.lua")
 
 local lsp_client_capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-lspcfg.sumneko_lua.setup {
+lspcfg.lua_ls.setup {
   on_attach=on_attach,
   capabilities = lsp_client_capabilities,
   flags={
@@ -36,10 +36,6 @@ lspcfg.sumneko_lua.setup {
     },
   },
 }
-
-local on_attach_rust=function(client)
-  require('nvim-cmp').on_attach(client)
-end
 
 lspcfg.rust_analyzer.setup({
   on_attach=on_attach,
