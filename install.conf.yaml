@@ -64,7 +64,7 @@
         path: .config/winterminal/alacritty.yml
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
-    - [python mbin/install-nvim-packer.py]
+    - [python3 mbin/install-nvim-packer.py]
 - link:
     ~/AppData/Local/nvim-data/site/pack/packer/start/packer.nvim:
         if: 'pwsh.exe -version'
