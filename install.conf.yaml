@@ -22,6 +22,10 @@
     ~/.fzf.bash:   .fzf.bash
     ~/.fzf.zsh:    .fzf.zsh
     ~/.gitconfig:  .gitconfig
+    ~/.ssh/config:
+        if: '[ `uname` = Linux -o `uname` = Darwin ]'
+        create: true
+        path: .ssh/config
     ~/.terminfo/:
         if: '[ `uname` = Linux -o `uname` = Darwin ]'
         glob: true
